@@ -26,11 +26,14 @@ The papers will be listed by time order, noting the advancements along the way.
 - [Graph Attention Networks](https://arxiv.org/abs/1710.10903) by Velickovic et al. in 2017
 - [Inductive Representation Learning on Large Graphs](https://cs.stanford.edu/people/jure/pubs/graphsage-nips17.pdf) by Hamilton in 2017
 - [Learning Graph-Level Representation for Drug Discovery](https://arxiv.org/abs/1709.03741) by Li et al. in 2017
--[ MolGAN: An implicit generative model for small molecular graphs](https://arxiv.org/abs/1805.11973) by De Cao and Kiprf in 2018
+- [MolGAN: An implicit generative model for small molecular graphs](https://arxiv.org/abs/1805.11973) by De Cao and Kiprf in 2018
 - [PotentialNet for Molecular Property Prediction](https://pubs.acs.org/doi/full/10.1021/acscentsci.8b00507) by Feinberg et al. in 2018
 - [Adaptive Graph Convolutional Neural Networks](https://ojs.aaai.org/index.php/AAAI/article/view/11691) by Li et al. in 2018
 - [Junction Tree Variational Autoencoder for Molecular Graph Generation](https://proceedings.mlr.press/v80/jin18a.html) by Jin et al. in 2018
 - [Molecule Property Prediction Based on Spatial Graph Embedding](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00410) by Wang et al. in 2018
+- [Graph Convolutional Policy Network for Goal-Directed Molecular Graph Generation](https://proceedings.neurips.cc/paper/2018/file/d60678e8f2ba9c540798ebbde31177e8-Paper.pdf) by You et al. in 2018
+- [Hierarchical Graph Representation Learning with Differentiable Pooling](https://proceedings.neurips.cc/paper/2018/hash/e77dbaf6759253c7c6d0efc5690369c7-Abstract.html)by Ying in 2018
+- [Graph classification using structural attention](https://dl.acm.org/doi/pdf/10.1145/3219819.3219980) by Lee et al. in 2018
 - [Chemi-Net: A Molecular Graph Convolutional Network for Accurate Drug Property Prediction](https://www.mdpi.com/1422-0067/20/14/3389/htm) by Liu et al. in 2019
 - [Analyzing Learned Molecular Representations for Property Prediction](https://pubs.acs.org/doi/full/10.1021/acs.jcim.9b00237) by Yang et al. in 2019
 - [Strategies for Pre-training Graph Neural Networks](https://arxiv.org/abs/1905.12265) by Hu et al. in 2019
@@ -38,11 +41,16 @@ The papers will be listed by time order, noting the advancements along the way.
 - [Low Data Drug Discovery with One-Shot Learning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5408335/) by Tran in 2017
 - [Geom-GCN: Geometric Graph Convolutional Networks](https://arxiv.org/abs/2002.05287) by Pei et al. in 2020
 - [Multi-View Graph Neural Networks for Molecular Property Prediction](https://arxiv.org/abs/2005.13607) by Ma et al. in 2020
+- [ASGN: An Active Semi-supervised Graph Neural Network for Molecular Property Prediction](https://dl.acm.org/doi/pdf/10.1145/3394486.3403117)by Hao et al. in 2020
+- [MoFlow: An Invertible Flow Model for Generating Molecular Graphs](https://dl.acm.org/doi/abs/10.1145/3394486.3403104)by Zang et al. in 2020
+- [GraphAF: a Flow-based Autoregressive Model for Molecular Graph Generation](https://arxiv.org/abs/2001.09382) by Shi et al. in 2021
 - [Communicative Representation Learning on Attributed Molecular Graphs](https://www.ijcai.org/proceedings/2020/0392.pdf) by Song et al. in 2021
 
 # Variational Graph Autoencoders
 - [Variational Graph Auto-Encoders](https://arxiv.org/abs/1611.07308) by Kipf amd Welling in 2016
 - [Constrained Graph Variational Autoencoders for Molecule Design](https://arxiv.org/abs/1805.09076) by Liu et al. in 2018
+- [Constrained Generation of Semantically Valid
+Graphs via Regularizing Variational Autoencoders](https://proceedings.neurips.cc/paper/2018/file/1458e7509aa5f47ecfb92536e7dd1dc7-Paper.pdf) by Ma et al. in 2018
 # Graph Unet
 -  [Graph U-Nets](https://arxiv.org/pdf/1905.05178.pdf) by Gao and Li in 2018
 
@@ -55,9 +63,13 @@ The papers will be listed by time order, noting the advancements along the way.
 
 # Reviews 
 - [Graph convolutional networks: a comprehensive review](https://computationalsocialnetworks.springeropen.com/articles/10.1186/s40649-019-0069-y?ref=https://githubhelp.com) by Zhang et al. in 2019
+- [How Powerful are Graph Neural Networks?](https://arxiv.org/abs/1810.00826) by Xu et al. in 2019
 - [Graph convolutional networks for computational drug development and discovery](https://academic.oup.com/bib/article/21/3/919/5498046?login=true) by Sun et al. in 2020
 - Could graph neural networks learn better molecular representation for drug discovery? A comparison study of descriptor-based and graph-based models
 (https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00479-8) by Jiang et al. in 2021
+- [Graph neural networks: A review of methods and applications](https://www.sciencedirect.com/science/article/pii/S2666651021000012) by Zhou et al. in 2020
+- [A compact review of molecular property prediction with graph neural networks](https://www.sciencedirect.com/science/article/pii/S1740674920300305) by Wieder et al. in 2020
+
 
 
 ## Articles
