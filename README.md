@@ -7,11 +7,22 @@ The papers will be listed by time order, noting the advancements along the way.
 
 # Table of Contents 
 - [Tutorials](#Tutorials)
-- [Videos](url)
-- [Papers](url)
-- [Articles/Blogs](url)
-- [Repositories](url)
-- [Tools](url)
+- [Papers](#Papers)
+- [Articles/Blogs](#Articles)
+- [Repositories](#Repositories)
+- [Videos](#Videos)
+- [Tools](#Tools)
 
 
-# Tutorials
+## Tutorials
+
+
+## Papers
+
+## Articles
+
+## Repositories
+
+## Videos
+
+## Tools
