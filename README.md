@@ -19,6 +19,11 @@ The papers will be listed by time order, noting the advancements along the way.
 
 ## Papers
 
+[Convolutional Networks on Graphs for Learning Molecular Fingerprints
+](https://arxiv.org/abs/1509.09292) by Duvenaud et al. in 2015.
+[Molecular Graph Convolutions: Moving Beyond Fingerprints
+](https://arxiv.org/abs/1603.00856?context=stat) by Kearnes et al. in 2016
+
 ## Articles
 
 ## Repositories
