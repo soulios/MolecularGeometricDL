@@ -57,7 +57,7 @@ Graphs via Regularizing Variational Autoencoders](https://proceedings.neurips.cc
 
 # Graph Contrastive learning
 - [MoCL: Data-driven Molecular Fingerprint via Knowledge-aware Contrastive Learning from Molecular Graph](https://arxiv.org/abs/2106.04509) by Sun et al. in 2021
-- [FragNet, a Contrastive Learning-Based Transformer Model for Clustering, Interpreting, Visualizing, and Navigating Chemical Space](https://www.mdpi.com/1420-3049/26/7/2065 by Shrivastava in 2021)
+- [FragNet, a Contrastive Learning-Based Transformer Model for Clustering, Interpreting, Visualizing, and Navigating Chemical Space](https://www.mdpi.com/1420-3049/26/7/2065) by Shrivastava in 2021
 - [Molecular contrastive learning of representations via graph neural networks](https://www.nature.com/articles/s42256-022-00447-x) by Wang et al. in 2022 🔥🔥🔥
 # Graph Transformers
 - [Graph Transformer Networks](https://arxiv.org/abs/1911.06455) by Jun et al. in 2020
