@@ -6,9 +6,9 @@ I am creating this resource, while conducting my PhD work at Helmholtz Centre of
 The papers will be listed by time order, noting the advancements along the way.
 
 # Table of Contents 
-- Tutorials
-- Videos
-- Papers
-- Articles/Blogs
-- Repositories
-- Tools
+- [Tutorials](url)
+- [Videos](url)
+- [Papers](url)
+- [Articles/Blogs](url)
+- [Repositories](url)
+- [Tools](url)
