@@ -39,6 +39,7 @@ The papers will be listed by time order, noting the advancements along the way.
 - [Analyzing Learned Molecular Representations for Property Prediction](https://pubs.acs.org/doi/full/10.1021/acs.jcim.9b00237) by Yang et al. in 2019🔥🔥🔥
 - [Strategies for Pre-training Graph Neural Networks](https://arxiv.org/abs/1905.12265) by Hu et al. in 2019🔥🔥🔥
 - [CensNet: Convolution with Edge-Node Switching in Graph Neural Networks](https://www.ijcai.org/Proceedings/2019/0369.pdf) by Jiang in 2019
+- [Pushing the Boundaries of Molecular Representation for Drug Discovery with the Graph Attention Mechanism](https://pubmed.ncbi.nlm.nih.gov/31408336/) by Xiong et al. in 2020
 - [Geom-GCN: Geometric Graph Convolutional Networks](https://arxiv.org/abs/2002.05287) by Pei et al. in 2020 
 - [Multi-View Graph Neural Networks for Molecular Property Prediction](https://arxiv.org/abs/2005.13607) by Ma et al. in 2020
 - [ASGN: An Active Semi-supervised Graph Neural Network for Molecular Property Prediction](https://dl.acm.org/doi/pdf/10.1145/3394486.3403117)by Hao et al. in 2020
@@ -77,8 +78,7 @@ Graphs via Regularizing Variational Autoencoders](https://proceedings.neurips.cc
 - [Chemprop: A library with MPNN and D-MPNN applications on molecular datasets](https://github.com/chemprop/chemprop)🔥
 
 ## Videos
--[ An Introduction to Graph Neural Networks: Models and Applications]
-(https://www.youtube.com/watch?v=zCEYiCxrL_0) by Miltos ALlamanis(Microsoft Research)🔥🔥🔥
+-[ An Introduction to Graph Neural Networks: Models and Applications](https://www.youtube.com/watch?v=zCEYiCxrL_0) by Miltos ALlamanis(Microsoft Research)🔥🔥🔥
 - [Intro to graph neural networks (ML Tech Talks)](https://www.youtube.com/watch?v=8owQBFAHw7E) by Petar Velickovic(DeepMind)🔥🔥🔥
 - [Understanding Graph Neural Networks](https://www.youtube.com/watch?v=fOctJB4kVlM) by DeepFindr
 - [The AI EPiphany](https://www.youtube.com/c/TheAIEpiphany/playlists) by Gordic Aleksa
@@ -88,3 +88,4 @@ Graphs via Regularizing Variational Autoencoders](https://proceedings.neurips.cc
 - [RDKit](https://www.rdkit.org/): A cheminformatics library for generating/calculating molecular descriptors and fingerprints and handling molecules
 - [MoleculeNet](https://moleculenet.org/): A library for benchmarking ML models across different molecular tasks
 - [DeepChem](https://github.com/deepchem/deepchem): A toolkit which includes a lot of different models and datasets with relevant tutotials for gentle introduction into molecular ML. 
+- [DGL-lifesci](https://github.com/awslabs/dgl-lifesci):  A package for various applications in life science with graph neural networks.🔥🔥🔥
