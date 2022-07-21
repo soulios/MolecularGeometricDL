@@ -29,9 +29,9 @@ Molecular fingerprints represent the molecule as a sequence of bits. The most co
 - [Substructure-based] : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem).
 - [Topological] : They work by analyzing all the fragments of the molecule following a (usually linear) path up to a certain number of bonds, and then hashing every one of these paths to create the fingerprint.
 - [Circular] : They are topological fingerprints but instead of looking for paths in the molecule, the environment of each atom up to a determined radius is recorded(ECFP,FCFP).
-![alt text](https://github.com/soulios/MolecularGeometricDL/[main]/SUBFP.jpg?raw=true)
-![alt text](https://github.com/soulios/MolecularGeometricDL/[main]/TOPOOGICALFP.jpg?raw=true)
-![alt text]https://github.com/soulios/MolecularGeometricDL/[main]/CIRCULARFP.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SUBFP.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/TOPOOGICALFP.jpg?raw=true)
+![alt text]https://github.com/soulios/MolecularGeometricDL/blob/main/CIRCULARFP.jpg?raw=true)
 
 
 
