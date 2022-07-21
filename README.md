@@ -98,34 +98,43 @@ f(PX)=f(X)
 But if we wanted information on node-level the invariant function would not suffice. Instead, we need a permutation equivariant function that do not change the node order and follow the following equation.
 f(PX)=Pf(X)
 
-We can think of these functions f that transform the x<sub>i features of a node to a latent represntation h<sub>i.
-h<sub>i = f(x<sub>i).
+We can think of these functions f that transform the x<sub>i</sub> features of a node to a latent represntation h<sub>i</sub>.
+h<sub>i = f(x<sub>i</sub>).
 Stacking these will result in H = f(X).
 
 How we can use these latent vectors?
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphtasks.png?raw=true)
 
 
 How we incorporate the adjacency matrix A into this equation?
 
 Towards a simple update rule: 
 
-H<sub>i+1 = &#963;(W*A*H<sub>i), where A is the adjacency matrix and we dropped β for simplicity reasons.
-Node
+H<sub>i+1</sub> = &#963;(W*A*H<sub>i</sub>), where A is the adjacency matrix and we dropped β for simplicity reasons.
+
+Node-wise the equation is written:
+
+h<sub>i</sub> = Σ (W*h<sub>j</sub>)
+
 
 *Example:
 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacency.png?raw=true)
 
-Considering this adjacency matrix, when we update the stae of the node v<sub>1, we will take into account its neighbor states.
-That although would be wrong as we'll be entirely dropping the previous state of node v<sub>1. 
-So, we need to make a correction to the adjacency matrix A by adding the identity matrix.
+Considering this adjacency matrix, when we update the stae of the node v<sub>1</sub>, we will take into account its neighbor states.
+That although would be wrong as we'll be entirely dropping the previous state of node v<sub>1</sub>. 
+So, we need to make a correction to the adjacency matrix A by adding the identity matrix and creating the matrix Ã.
 That would add 1s across the diagonal making each node a neighbor of itself, i.e we add self-loops.
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacency.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacencycorrected.png?raw=true)
 
+Each latent vector of a node is a sum of the vectors of its neighbors. So, if the degree of a node( degree shows to how many neighbors a node has) is really high the scale of the latent vector would be entirely different and we'll face vanishing or exploding gradients.
+- [So, we should normalize based on the degree of the node].
+Firstly we calculate degree matrix, D by summing up row-wise the adjacency matrix, Ã.
+Then we inverse it and thus the quation takes the form.
 
+H<sub>i+1</sub> = &#963;(W*Ã*D<sup>-1</sup>*H<sub>i</sub>)
 
 
 ## Tutorials
