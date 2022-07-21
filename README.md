@@ -6,6 +6,8 @@ I am creating this resource, while conducting my PhD work at Helmholtz Centre of
 The papers will be listed by time order, noting the advancements along the way.
 
 # Table of Contents 
+- [What is a graph?](#What is a graph?)
+- [Graph Convolutions](#Graph Convolutions)
 - [Tutorials](#Tutorials)
 - [Papers](#Papers)
 - [Articles/Blogs](#Articles)
@@ -13,6 +15,31 @@ The papers will be listed by time order, noting the advancements along the way.
 - [Videos](#Videos)
 - [Tools](#Tools)
 
+## Molecular representations
+A molecule can be represented in a lot of ways. As input to a machine learning model, some represntations are more popular.
+
+
+# Molecular descriptors
+"The molecular descriptor is the final result of a logic and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment."[Handbook of molecular descriptors](https://onlinelibrary.wiley.com/doi/book/10.1002/9783527613106)
+There are several open-source and proprietary tools and packages that calculate a number of descriptors and of course there is a discrepancy between them. That does not allow for uniform representations of molecules and leads to non reproducible results.
+
+
+# Molecular Fingerprints
+Molecular fingerprints represent the molecule as a sequence of bits. The most common types of fingerprints are the substructure based, the topological and the circular ones.
+- [Substructure-based] : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem).
+- [Topological] : They work by analyzing all the fragments of the molecule following a (usually linear) path up to a certain number of bonds, and then hashing every one of these paths to create the fingerprint.
+- [Circular] : They are topological fingerprints but instead of looking for paths in the molecule, the environment of each atom up to a determined radius is recorded(ECFP,FCFP).
+![alt text](https://github.com/soulios/MolecularGeometricDL/[main]/SUBFP.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/[main]/TOPOOGICALFP.jpg?raw=true)
+![alt text]https://github.com/soulios/MolecularGeometricDL/[main]/CIRCULARFP.jpg?raw=true)
+
+
+
+## What is  a graph?
+A graph G is a set of nodes and vertices between them G(V,E). Molecules can be intuitively seen as graphs where the nodes are the atoms and the edges are the bonds between them.
+
+
+##Graph Convolutions
 
 ## Tutorials
 
