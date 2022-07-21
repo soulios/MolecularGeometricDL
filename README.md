@@ -88,6 +88,7 @@ There are some significant differences between images and graphs.
 - Images are positioned in a Euclidean space, and thus have a notion of locality.Pixels that are close to each other will be much more strongly related than distant ones. Graphs on the other hand do not as information about the distance between nodes is not encoded.
 - Pixels follow an order while graph nodes do not.
 So, the locality is achived in graphs based on neighborhooods.
+Also, we adopt the weight sharing from the normal convolutions.
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
 
 The order invariance is achieved by applying functions that are order invariant
@@ -99,7 +100,7 @@ But if we wanted information on node-level the invariant function would not suff
 f(PX)=Pf(X)
 
 We can think of these functions f that transform the x<sub>i</sub> features of a node to a latent represntation h<sub>i</sub>.
-h<sub>i = f(x<sub>i</sub>).
+h<sub>i</sub> = f(x<sub>i</sub>).
 Stacking these will result in H = f(X).
 
 How we can use these latent vectors?
@@ -110,14 +111,14 @@ How we incorporate the adjacency matrix A into this equation?
 
 Towards a simple update rule: 
 
-H<sub>i+1</sub> = &#963;(W*A*H<sub>i</sub>), where A is the adjacency matrix and we dropped β for simplicity reasons.
+H<sub>i+1</sub> = &#963;(A*W*H<sub>i</sub>), where A is the adjacency matrix and we dropped β for simplicity reasons.
 
 Node-wise the equation is written:
 
 h<sub>i</sub> = Σ (W*h<sub>j</sub>)
 
 
-*Example:
+Example:
 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacency.png?raw=true)
@@ -127,14 +128,30 @@ That although would be wrong as we'll be entirely dropping the previous state of
 So, we need to make a correction to the adjacency matrix A by adding the identity matrix and creating the matrix Ã.
 That would add 1s across the diagonal making each node a neighbor of itself, i.e we add self-loops.
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacencycorrected.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacencycorrected.jpg?raw=true)
 
 Each latent vector of a node is a sum of the vectors of its neighbors. So, if the degree of a node( degree shows to how many neighbors a node has) is really high the scale of the latent vector would be entirely different and we'll face vanishing or exploding gradients.
 - [So, we should normalize based on the degree of the node].
 Firstly we calculate degree matrix, D by summing up row-wise the adjacency matrix, Ã.
+
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/degree.jpg?raw=true)
+
 Then we inverse it and thus the quation takes the form.
 
-H<sub>i+1</sub> = &#963;(W*Ã*D<sup>-1</sup>*H<sub>i</sub>)
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/inversedegree.jpg?raw=true)
+
+__H<sub>i+1</sub> = &#963;(Ã*D<sup>-1</sup>*W<sub>i</sub>*H<sub>i</sub>)__
+
+This equation essentially describes a simple averaging of the neighbors' vectors.
+
+# GCN Variants
+
+The most known variation of graph convolutions was set by Kipf & Welling in 2017.
+
+__H<sub>i+1</sub> = &#963;(D<sup>-1/2</sup>Ã*D<sup>-1/2</sup>*W<sub>i</sub>*H<sub>i</sub>)__
+
 
 
 ## Tutorials
