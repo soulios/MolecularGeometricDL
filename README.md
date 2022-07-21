@@ -6,8 +6,9 @@ I am creating this resource, while conducting my PhD work at Helmholtz Centre of
 The papers will be listed by time order, noting the advancements along the way.
 
 # Table of Contents 
-- [What is a graph?](#What is a graph?)
-- [Graph Convolutions](#Graph Convolutions)
+- [Molecular representations](#Molecular-representations)
+- [What is a graph?](#What-is-a-graph?)
+- [Graph Convolutions](#Graph-Convolutions)
 - [Tutorials](#Tutorials)
 - [Papers](#Papers)
 - [Articles/Blogs](#Articles)
@@ -15,19 +16,21 @@ The papers will be listed by time order, noting the advancements along the way.
 - [Videos](#Videos)
 - [Tools](#Tools)
 
-# Molecular representations
+
+
+## Molecular representations
 A molecule can be represented in a lot of ways. As input to a machine learning model, some represntations are more popular.
 Although, these representations have resulted in useful ML models for different molecular tasks, the plateau has not yet been reached.
 Due to the rise of graph neural networks in the last five years, several applications involve molecular tasks.
 
-## Molecular descriptors
+# Molecular descriptors
 "The molecular descriptor is the final result of a logic and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment." [Handbook of molecular descriptors](https://onlinelibrary.wiley.com/doi/book/10.1002/9783527613106)
 There are several open-source and proprietary tools and packages that calculate a number of descriptors and of course there is a discrepancy between them. That does not allow for uniform representations of molecules and leads to non reproducible results.
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/descriptors.png?raw=true)
 
 
 
-## Molecular Fingerprints
+# Molecular Fingerprints
 Molecular fingerprints represent the molecule as a sequence of bits. The most common types of fingerprints are the substructure based, the topological and the circular ones.
 - [Substructure-based] : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem). 
 
@@ -43,7 +46,7 @@ Molecular fingerprints represent the molecule as a sequence of bits. The most co
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/CIRCULARFP.jpg?raw=true)
 
-## Smiles
+# Smiles
 The simplified molecular-input line-entry system (SMILES) is a specification in the form of a line notation for describing the structure of chemical species using short ASCII strings. SMILES strings can be imported by most molecule editors for conversion back into two-dimensional drawings or three-dimensional models of the molecules. 
 Unfortunately, a molecule can be represented by several SMILES strings and SMILES do not encode 3d information about the molecule
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SMILES.png?raw=true)
@@ -52,17 +55,78 @@ Unfortunately, a molecule can be represented by several SMILES strings and SMILE
 
 ## What is a graph?
 A graph G is a set of nodes and vertices between them G(V,E). Molecules can be intuitively seen as graphs where the nodes are the atoms and the edges are the bonds between them.
+
+
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphs.png?raw=true)
+
+
 How we we use the graphs as input though?
 The graph can be represented essentially by three matrices:
 - The adjacency matrix, which shows how the nodes(atoms) are connected
 - The node features matrix, which encodes information about every node(atom)
 - The edge features matrix, whoch encodes information about the edge(bond)
+
+
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
 
 
 
 ## Graph Convolutions
+
+A typical feed forward network does a forward pass with the following equation:
+
+Y = &#963;(W*X + &#946;), where σ is a non-linear function(ReLu,tanh), W is the weight associated with each feature, X the features and β is the bias.
+
+In convolutional neural networks, the input ussually is an image(i.e a tensor height*width*channels). An RGB image has three channels whereas a greyscale only one. 
+In CNNs, the W is called a filter or kernel and is usually a matrix(2x2, 3x3 etc.) which is the same passed acrossed the image to extract features(patterns) from every part of the image. That is called weight sharing. That is done because a pattern is intersting wherever it is in the image(translational invariance)
+
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/cnns.gif)
+
+The question became how we can generalize the convolutions to graphs?
+There are some significant differences between images and graphs.
+- Images are positioned in a Euclidean space, and thus have a notion of locality.Pixels that are close to each other will be much more strongly related than distant ones. Graphs on the other hand do not as information about the distance between nodes is not encoded.
+- Pixels follow an order while graph nodes do not.
+So, the locality is achived in graphs based on neighborhooods.
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
+
+The order invariance is achieved by applying functions that are order invariant
+Permuation matrix, P is a matrix that only changes the order of another matrix.
+So for every P, the following equation should be obeyed.
+f(PX)=f(X)
+
+But if we wanted information on node-level the invariant function would not suffice. Instead, we need a permutation equivariant function that do not change the node order and follow the following equation.
+f(PX)=Pf(X)
+
+We can think of these functions f that transform the x<sub>i features of a node to a latent represntation h<sub>i.
+h<sub>i = f(x<sub>i).
+Stacking these will result in H = f(X).
+
+How we can use these latent vectors?
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/.png?raw=true)
+
+
+How we incorporate the adjacency matrix A into this equation?
+
+Towards a simple update rule: 
+
+H<sub>i+1 = &#963;(W*A*H<sub>i), where A is the adjacency matrix and we dropped β for simplicity reasons.
+Node
+
+*Example:
+
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacency.png?raw=true)
+
+Considering this adjacency matrix, when we update the stae of the node v<sub>1, we will take into account its neighbor states.
+That although would be wrong as we'll be entirely dropping the previous state of node v<sub>1. 
+So, we need to make a correction to the adjacency matrix A by adding the identity matrix.
+That would add 1s across the diagonal making each node a neighbor of itself, i.e we add self-loops.
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacency.png?raw=true)
+
+
+
 
 ## Tutorials
 
