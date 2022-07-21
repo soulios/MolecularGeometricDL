@@ -25,6 +25,7 @@ Due to the rise of graph neural networks in the last five years, several applica
 
 # Molecular descriptors
 "The molecular descriptor is the final result of a logic and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment." [Handbook of molecular descriptors](https://onlinelibrary.wiley.com/doi/book/10.1002/9783527613106)
+
 There are several open-source and proprietary tools and packages that calculate a number of descriptors and of course there is a discrepancy between them. That does not allow for uniform representations of molecules and leads to non reproducible results.
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/descriptors.png?raw=true)
 
@@ -48,7 +49,7 @@ Molecular fingerprints represent the molecule as a sequence of bits. The most co
 
 # Smiles
 The simplified molecular-input line-entry system (SMILES) is a specification in the form of a line notation for describing the structure of chemical species using short ASCII strings. SMILES strings can be imported by most molecule editors for conversion back into two-dimensional drawings or three-dimensional models of the molecules. 
-Unfortunately, a molecule can be represented by several SMILES strings and SMILES do not encode 3d information about the molecule
+Unfortunately, a molecule can be represented by several SMILES strings and SMILES do not encode 3D information about the molecule
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SMILES.png?raw=true)
 
 
@@ -73,57 +74,80 @@ The graph can be represented essentially by three matrices:
 
 ## Graph Convolutions
 
+__Normal Convolutions__
+
 A typical feed forward network does a forward pass with the following equation:
 
-Y = &#963;(W*X + &#946;), where σ is a non-linear function(ReLu,tanh), W is the weight associated with each feature, X the features and β is the bias.
+- Y = &#963;(W*X + &#946;),
 
-In convolutional neural networks, the input ussually is an image(i.e a tensor height*width*channels). An RGB image has three channels whereas a greyscale only one. 
-In CNNs, the W is called a filter or kernel and is usually a matrix(2x2, 3x3 etc.) which is the same passed acrossed the image to extract features(patterns) from every part of the image. That is called weight sharing. That is done because a pattern is intersting wherever it is in the image(translational invariance)
+where σ is a non-linear function(ReLU,tanh), W is the weight associated with each feature, X the features and β is the bias.
+
+In convolutional neural networks, the input usually is an image(i.e a tensor height* width*channels). 
+
+- An RGB image has three channels whereas a greyscale only one. 
+
+- In CNNs, the W is called a filter or kernel and is usually a matrix(2x2, 3x3 etc.) which is the same passed acrossed the image to extract features(patterns) from every part of the image.
+
+- That is called weight sharing. That is done because a pattern is interesting wherever it is in the image(translational invariance)
 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/cnns.gif)
 
 The question became how we can generalize the convolutions to graphs?
+
 There are some significant differences between images and graphs.
 - Images are positioned in a Euclidean space, and thus have a notion of locality.Pixels that are close to each other will be much more strongly related than distant ones. Graphs on the other hand do not as information about the distance between nodes is not encoded.
 - Pixels follow an order while graph nodes do not.
-So, the locality is achived in graphs based on neighborhooods.
+So, the locality is achieved in graphs based on neighborhoods.
 Also, we adopt the weight sharing from the normal convolutions.
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
 
+__Invariance__
+
 The order invariance is achieved by applying functions that are order invariant
-Permuation matrix, P is a matrix that only changes the order of another matrix.
+Permutation matrix, P is a matrix that only changes the order of another matrix.
 So for every P, the following equation should be obeyed.
-f(PX)=f(X)
+- f(PX)=f(X)
+
+__Equivariance__
 
 But if we wanted information on node-level the invariant function would not suffice. Instead, we need a permutation equivariant function that do not change the node order and follow the following equation.
-f(PX)=Pf(X)
+- f(PX)=Pf(X)
 
-We can think of these functions f that transform the x<sub>i</sub> features of a node to a latent represntation h<sub>i</sub>.
-h<sub>i</sub> = f(x<sub>i</sub>).
-Stacking these will result in H = f(X).
+We can think of these functions f that transform the x<sub>i</sub> features of a node to a latent vector h<sub>i</sub>.
+
+
+__h<sub>i</sub> = f(x<sub>i</sub>)__
+
+Stacking these will result in 
+__H = f(X)__
 
 How we can use these latent vectors?
+
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphtasks.png?raw=true)
 
+But hold on...
 
 How we incorporate the adjacency matrix A into this equation?
 
-Towards a simple update rule: 
+A simple update rule: 
 
-H<sub>i+1</sub> = &#963;(A*W*H<sub>i</sub>), where A is the adjacency matrix and we dropped β for simplicity reasons.
+__H<sub>i+1</sub> = &#963;(A*W*H<sub>i</sub>)__, where A is the adjacency matrix and we dropped β for simplicity reasons.
+
+Hopefully the similarities with the classical equation are obvious.
 
 Node-wise the equation is written:
 
-h<sub>i</sub> = Σ (W*h<sub>j</sub>)
+__h<sub>i</sub> = Σ (W*h<sub>j</sub>)__,
 
+where j is every neighbor of the node i.
 
-Example:
+Let's see it in practice:
 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacency.png?raw=true)
 
-Considering this adjacency matrix, when we update the stae of the node v<sub>1</sub>, we will take into account its neighbor states.
+Considering this adjacency matrix, when we update the state of the node v<sub>1</sub>, we will take into account its neighbor states.
 That although would be wrong as we'll be entirely dropping the previous state of node v<sub>1</sub>. 
 So, we need to make a correction to the adjacency matrix A by adding the identity matrix and creating the matrix Ã.
 That would add 1s across the diagonal making each node a neighbor of itself, i.e we add self-loops.
@@ -137,12 +161,12 @@ Firstly we calculate degree matrix, D by summing up row-wise the adjacency matri
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/degree.jpg?raw=true)
 
-Then we inverse it and thus the quation takes the form.
+Then we inverse it and thus the equation takes the form.
 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/inversedegree.jpg?raw=true)
 
-__H<sub>i+1</sub> = &#963;(Ã*D<sup>-1</sup>*W<sub>i</sub>*H<sub>i</sub>)__
+__H<sub>i+1</sub> = &#963;(ÃD<sup>-1</sup>W<sub>i</sub>H<sub>i</sub>)__
 
 This equation essentially describes a simple averaging of the neighbors' vectors.
 
@@ -150,7 +174,7 @@ This equation essentially describes a simple averaging of the neighbors' vectors
 
 The most known variation of graph convolutions was set by Kipf & Welling in 2017.
 
-__H<sub>i+1</sub> = &#963;(D<sup>-1/2</sup>Ã*D<sup>-1/2</sup>*W<sub>i</sub>*H<sub>i</sub>)__
+__H<sub>i+1</sub> = &#963;(D<sup>-1/2</sup>ÃD<sup>-1/2</sup>W<sub>i</sub>H<sub>i</sub>)__
 
 
 
