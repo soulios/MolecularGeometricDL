@@ -15,31 +15,54 @@ The papers will be listed by time order, noting the advancements along the way.
 - [Videos](#Videos)
 - [Tools](#Tools)
 
-## Molecular representations
+# Molecular representations
 A molecule can be represented in a lot of ways. As input to a machine learning model, some represntations are more popular.
+Although, these representations have resulted in useful ML models for different molecular tasks, the plateau has not yet been reached.
+Due to the rise of graph neural networks in the last five years, several applications involve molecular tasks.
 
-
-# Molecular descriptors
-"The molecular descriptor is the final result of a logic and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment."[Handbook of molecular descriptors](https://onlinelibrary.wiley.com/doi/book/10.1002/9783527613106)
+## Molecular descriptors
+"The molecular descriptor is the final result of a logic and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment." [Handbook of molecular descriptors](https://onlinelibrary.wiley.com/doi/book/10.1002/9783527613106)
 There are several open-source and proprietary tools and packages that calculate a number of descriptors and of course there is a discrepancy between them. That does not allow for uniform representations of molecules and leads to non reproducible results.
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/descriptors.png?raw=true)
 
 
-# Molecular Fingerprints
+
+## Molecular Fingerprints
 Molecular fingerprints represent the molecule as a sequence of bits. The most common types of fingerprints are the substructure based, the topological and the circular ones.
-- [Substructure-based] : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem).
-- [Topological] : They work by analyzing all the fragments of the molecule following a (usually linear) path up to a certain number of bonds, and then hashing every one of these paths to create the fingerprint.
-- [Circular] : They are topological fingerprints but instead of looking for paths in the molecule, the environment of each atom up to a determined radius is recorded(ECFP,FCFP).
+- [Substructure-based] : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem). 
+
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SUBFP.jpg?raw=true)
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/TOPOOGICALFP.jpg?raw=true)
-![alt text]https://github.com/soulios/MolecularGeometricDL/blob/main/CIRCULARFP.jpg?raw=true)
+
+- [Topological] : They work by analyzing all the fragments of the molecule following a (usually linear) path up to a certain number of bonds, and then hashing every one of these paths to create the fingerprint. 
+
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/TOPOLOGICALFP.jpg?raw=true)
+
+- [Circular] : They are topological fingerprints but instead of looking for paths in the molecule, the environment of each atom up to a determined radius is recorded(ECFP,FCFP).
+
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/CIRCULARFP.jpg?raw=true)
+
+## Smiles
+The simplified molecular-input line-entry system (SMILES) is a specification in the form of a line notation for describing the structure of chemical species using short ASCII strings. SMILES strings can be imported by most molecule editors for conversion back into two-dimensional drawings or three-dimensional models of the molecules. 
+Unfortunately, a molecule can be represented by several SMILES strings and SMILES do not encode 3d information about the molecule
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SMILES.png?raw=true)
 
 
 
-## What is  a graph?
+## What is a graph?
 A graph G is a set of nodes and vertices between them G(V,E). Molecules can be intuitively seen as graphs where the nodes are the atoms and the edges are the bonds between them.
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphs.png?raw=true)
+How we we use the graphs as input though?
+The graph can be represented essentially by three matrices:
+- The adjacency matrix, which shows how the nodes(atoms) are connected
+- The node features matrix, which encodes information about every node(atom)
+- The edge features matrix, whoch encodes information about the edge(bond)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
 
 
-##Graph Convolutions
+
+## Graph Convolutions
 
 ## Tutorials
 
