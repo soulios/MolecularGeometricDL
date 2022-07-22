@@ -33,16 +33,16 @@ There are several open-source and proprietary tools and packages that calculate 
 
 # Molecular Fingerprints
 Molecular fingerprints represent the molecule as a sequence of bits. The most common types of fingerprints are the substructure based, the topological and the circular ones.
-- [Substructure-based] : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem). 
+- Substructure-based : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem). 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SUBFP.jpg?raw=true)
 
-- [Topological] : They work by analyzing all the fragments of the molecule following a (usually linear) path up to a certain number of bonds, and then hashing every one of these paths to create the fingerprint. 
+- Topological : They work by analyzing all the fragments of the molecule following a (usually linear) path up to a certain number of bonds, and then hashing every one of these paths to create the fingerprint. 
 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/TOPOLOGICALFP.jpg?raw=true)
 
-- [Circular] : They are topological fingerprints but instead of looking for paths in the molecule, the environment of each atom up to a determined radius is recorded(ECFP,FCFP).
+- Circular : They are topological fingerprints but instead of looking for paths in the molecule, the environment of each atom up to a determined radius is recorded(ECFP,FCFP).
 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/CIRCULARFP.jpg?raw=true)
@@ -61,7 +61,8 @@ A graph G is a set of nodes and vertices between them G(V,E). Molecules can be i
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphs.png?raw=true)
 
 
-How we we use the graphs as input though?
+How we  use the graphs as input though?
+
 The graph can be represented essentially by three matrices:
 - The adjacency matrix, which shows how the nodes(atoms) are connected
 - The node features matrix, which encodes information about every node(atom)
@@ -78,7 +79,7 @@ __Normal Convolutions__
 
 A typical feed forward network does a forward pass with the following equation:
 
-- Y = &#963;(W*X + &#946;),
+- __Y = &#963;(W*X + &#946;)__,
 
 where σ is a non-linear function(ReLU,tanh), W is the weight associated with each feature, X the features and β is the bias.
 
@@ -132,7 +133,8 @@ How we incorporate the adjacency matrix A into this equation?
 
 A simple update rule: 
 
-__H<sub>i+1</sub> = &#963;(A*W*H<sub>i</sub>)__, where A is the adjacency matrix and we dropped β for simplicity reasons.
+__H<sub>k+1</sub> = &#963;(A*W*H<sub>k</sub>)__, 
+where A is the adjacency matrix, k is the number of itearations and we dropped β for simplicity reasons.
 
 Hopefully the similarities with the classical equation are obvious.
 
@@ -161,20 +163,70 @@ Firstly we calculate degree matrix, D by summing up row-wise the adjacency matri
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/degree.jpg?raw=true)
 
-Then we inverse it and thus the equation takes the form.
+Then, we inverse it and thus the equation takes the form.
 
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/inversedegree.jpg?raw=true)
 
-__H<sub>i+1</sub> = &#963;(ÃD<sup>-1</sup>W<sub>i</sub>H<sub>i</sub>)__
+__H<sub>k+1</sub> = &#963;(ÃD<sup>-1</sup>W<sub>k</sub>H<sub>k</sub>)__
+
+__WE DID IT!__
+We now have the first equation upon we can build our different variants of graph convolutions.
 
 This equation essentially describes a simple averaging of the neighbors' vectors.
-
+This update of the state of the vectors happens for i number of steps.
+On each step or a neighborhood hop you aggregate the vectors fo the neighbors.
+Once we have all the latent vectors for each node after k number of steps, we can use these for node classification or in our case
+we can aggregate them and reach a unique embedding for every graph.
 # GCN Variants
+- GCN
 
-The most known variation of graph convolutions was set by Kipf & Welling in 2017.
+The most known variation of graph convolutions was set by Kipf & Welling in 2017. 
+They introduced a renormalization trick which is more than just a mere average of the neighbors.
+They normalize by  1&#247;&#8730;(d<sub>i</sub> * d<sub>j</sub>)
 
-__H<sub>i+1</sub> = &#963;(D<sup>-1/2</sup>ÃD<sup>-1/2</sup>W<sub>i</sub>H<sub>i</sub>)__
+
+__H<sub>k+1</sub> = &#963;(D<sup>-1/2</sup>ÃD<sup>-1/2</sup>W<sub>k</sub>H<sub>k</sub>)__
+
+From now on, we'll refer to it as the __GCN__.
+
+- GAT(Graph Attention Networks)
+
+Petar Velickovic had another idea. Instead, of giving an equal weight to every neighbor that will be added explicitly, 
+a concept called attention. So, the node-wise equation now became:
+
+__h<sub>i</sub> = σ(Σ(a<sub>ij</sub>h<sub>j</sub>))__
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GAT.png?raw=true)
+
+The a<sub>ij</sub> comes from applying a softmax to e<sub>ij</sub> = a(h<sub>i</sub>,h<sub>j</sub>)
+which are non-normalized coefficients across pairs of nodes
+
+Influenced by the results of Vaswani et al. they included multi head attention mechanisms which is essentially a K 
+number of replicates which are then concatenated or aggregated. The following figure from the paper makes it abundantly 
+clear.
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GAT-MULTI.png?raw=true)
+
+
+- Gated GNN
+
+In 2016, Li et al. introduced Gated Graph Neural Networks.
+They can be summed up by the following equation.
+
+# Message Passing Neural Nets
+
+The term message-passing arised in 2017 and  is really intuitive way to see graph neural nets.
+The two main points evolve around the two functions that happen in a GNN
+- The Update function, q
+- The Aggregate function, U
+From this [youtube video](https://www.youtube.com/watch?v=zCEYiCxrL_0) we can sum them up by the following equation.
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/MPNN.png?raw=true)
+
+and we can see the clearly the variants that arise from this.
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GCNMP.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GGNN.png?raw=true)
+
 
 
 
