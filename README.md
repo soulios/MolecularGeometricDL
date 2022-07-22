@@ -3,9 +3,12 @@ A repo of the most seminal applications of geometric deep learning in molecular 
 
 The most comprehensive professionally curated resource on Geometric Deep learning applied in molecular tasks including
 the best tutorials, videos, books, papers, articles, courses, websites, conferences and open-source libraries.
+
 I am creating this resource, while conducting my PhD work at Helmholtz Centre of Environmental Research under the supervision 
 of Dr. Jana Schor.
 The papers will be listed by time order, noting the advancements along the way.
+
+Disclaimer: All the images are sourced from the resources I linked.
 
 # Table of Contents 
 - [Molecular representations](#Molecular-representations)
@@ -26,7 +29,7 @@ A molecule can be represented in a lot of ways. As input to a machine learning m
 Although, these representations have resulted in useful ML models for different molecular tasks, the plateau has not yet been reached.
 Due to the rise of graph neural networks in the last five years, several applications involve molecular tasks.
 
-# Molecular descriptors
+### Molecular descriptors
 "The molecular descriptor is the final result of a logic and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment." [Handbook of molecular descriptors](https://onlinelibrary.wiley.com/doi/book/10.1002/9783527613106)
 
 There are several open-source and proprietary tools and packages that calculate a number of descriptors and of course there is a discrepancy between them. That does not allow for uniform representations of molecules and leads to non-reproducible results.
@@ -37,7 +40,7 @@ Below are the descriptors by the [DRAGON software](https://chm.kode-solutions.ne
 
 
 
-# Molecular Fingerprints
+### Molecular Fingerprints
 Molecular fingerprints represent the molecule as a sequence of bits. The most common types of fingerprints are the substructure based, the topological and the circular ones.
 - Substructure-based : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem). 
 
@@ -53,7 +56,7 @@ Molecular fingerprints represent the molecule as a sequence of bits. The most co
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/CIRCULARFP.jpg?raw=true)
 
-# Smiles
+### Smiles
 The simplified molecular-input line-entry system (SMILES) is describing the structure of chemical using short ASCII strings.
 SMILES strings can be imported by most molecule editors for
 conversion back into two-dimensional drawings or three-dimensional models of the molecules. 
@@ -264,6 +267,8 @@ The previously described GCN and GAT, following a similar [formalism](https://to
 can be described in the following figures.
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/GCNGATMP.png?raw=true)
 
+
+This [article](https://distill.pub/2021/understanding-gnns/) includes an interactive session to play aroung with graphs and the most essential GNN variants.
 
 
 
