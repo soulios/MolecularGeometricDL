@@ -95,7 +95,6 @@ There are some significant differences between images and graphs.
 - Pixels follow an order while graph nodes do not.
 So, the locality is achieved in graphs based on neighborhoods.
 Also, we adopt the weight sharing from the normal convolutions.
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/graphmatrices.png?raw=true)
 
 __Invariance__
 
