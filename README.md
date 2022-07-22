@@ -11,7 +11,6 @@ The papers will be listed by time order, noting the advancements along the way.
 Disclaimer: All the images are sourced from the resources I linked.
 
 # Table of Contents 
-- [Molecular representations](#Molecular-representations)
 - [What is a graph?](#What-is-a-graph?)
 - [Graph Neural Networks](#Graph-Neural-Networks)
 - [Graph Convolutions](#Graph-Convolutions)
@@ -21,49 +20,6 @@ Disclaimer: All the images are sourced from the resources I linked.
 - [Repositories](#Repositories)
 - [Videos](#Videos)
 - [Tools](#Tools)
-
-
-
-## Molecular representations
-A molecule can be represented in a lot of ways. As input to a machine learning model, some representations are more popular.
-Although, these representations have resulted in useful ML models for different molecular tasks, the plateau has not yet been reached.
-Due to the rise of graph neural networks in the last five years, several applications involve molecular tasks.
-
-### Molecular descriptors
-"The molecular descriptor is the final result of a logic and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment." [Handbook of molecular descriptors](https://onlinelibrary.wiley.com/doi/book/10.1002/9783527613106)
-
-There are several open-source and proprietary tools and packages that calculate a number of descriptors and of course there is a discrepancy between them. That does not allow for uniform representations of molecules and leads to non-reproducible results.
-Below are the descriptors by the [DRAGON software](https://chm.kode-solutions.net/pf/dragon-7-0/).
-
-
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/descriptors.png?raw=true)
-
-
-
-### Molecular Fingerprints
-Molecular fingerprints represent the molecule as a sequence of bits. The most common types of fingerprints are the substructure based, the topological and the circular ones.
-- Substructure-based : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem). 
-
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/SUBFP.jpg?raw=true)
-
-- Topological : They work by analyzing all the fragments of the molecule following a (usually linear) path up to a certain number of bonds, and then hashing every one of these paths to create the fingerprint. 
-
-
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/TOPOLOGICALFP.jpg?raw=true)
-
-- Circular : They are topological fingerprints but instead of looking for paths in the molecule, the environment of each atom up to a determined radius is recorded(ECFP,FCFP).
-
-
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/CIRCULARFP.jpg?raw=true)
-
-### Smiles
-The simplified molecular-input line-entry system (SMILES) is describing the structure of chemical using short ASCII strings.
-SMILES strings can be imported by most molecule editors for
-conversion back into two-dimensional drawings or three-dimensional models of the molecules. 
-Unfortunately, a molecule can be represented by several SMILES strings and although exists a canonical form of smiles, 
-it is not uniform in every database. Also, SMILES do not encode 3D information about the molecule.
-
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/SMILES.png?raw=true)
 
 
 
