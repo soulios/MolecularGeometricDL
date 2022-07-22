@@ -33,7 +33,7 @@ There are several open-source and proprietary tools and packages that calculate 
 Below are the descriptors by the [DRAGON software](https://chm.kode-solutions.net/pf/dragon-7-0/).
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/descriptors.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/descriptors.png?raw=true)
 
 
 
@@ -41,17 +41,17 @@ Below are the descriptors by the [DRAGON software](https://chm.kode-solutions.ne
 Molecular fingerprints represent the molecule as a sequence of bits. The most common types of fingerprints are the substructure based, the topological and the circular ones.
 - Substructure-based : The bit string depends on the presence in the compound of certain substructures or features from a given list of structural keys(MACCS,PubChem). 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SUBFP.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/SUBFP.jpg?raw=true)
 
 - Topological : They work by analyzing all the fragments of the molecule following a (usually linear) path up to a certain number of bonds, and then hashing every one of these paths to create the fingerprint. 
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/TOPOLOGICALFP.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/TOPOLOGICALFP.jpg?raw=true)
 
 - Circular : They are topological fingerprints but instead of looking for paths in the molecule, the environment of each atom up to a determined radius is recorded(ECFP,FCFP).
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/CIRCULARFP.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/CIRCULARFP.jpg?raw=true)
 
 # Smiles
 The simplified molecular-input line-entry system (SMILES) is describing the structure of chemical using short ASCII strings.
@@ -60,7 +60,7 @@ conversion back into two-dimensional drawings or three-dimensional models of the
 Unfortunately, a molecule can be represented by several SMILES strings and although exists a canonical form of smiles, 
 it is not uniform in every database. Also, SMILES do not encode 3D information about the molecule.
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SMILES.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/SMILES.png?raw=true)
 
 
 
@@ -68,7 +68,7 @@ it is not uniform in every database. Also, SMILES do not encode 3D information a
 A graph G is a set of nodes and vertices between them G(V,E). Molecules can be intuitively seen as graphs where the nodes are the atoms and the edges are the bonds between them.
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphs.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/graphs.png?raw=true)
 
 
 How we  use the graphs as input though?
@@ -79,7 +79,7 @@ The graph can be represented essentially by three matrices:
 - The edge features matrix, whoch encodes information about the edge(bond)
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/graphmatrices.png?raw=true)
 
 ## Graph Neural Networks
 
@@ -95,7 +95,7 @@ If you still want to get a basic understanding of spectral methods you can advis
 
 Oops, I mentioned inductive without even explaining. The image speaks for itself.
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/inductive.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/inductive.png?raw=true)
 
 __Inductive learning:__
 This type of learning is like the usual supervised learning. The model has not seen the nodes/graphs that will
@@ -105,7 +105,7 @@ __Transductive learning:__
 In transductive learning, the model has seen the nodes without their labels and/or some features but gets an
 understanding of how they are connected within the graph. That is useful mainly for node-classification tasks.
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/graphmatrices.png?raw=true)
 
 
 ## Graph Convolutions
@@ -127,7 +127,7 @@ In convolutional neural networks, the input usually is an image(i.e a tensor hei
 - That is called weight sharing. That is done because a pattern is interesting wherever it is in the image(translational invariance)
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/cnns.gif)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/cnns.gif)
 
 The question became how we can generalize the convolutions to graphs?
 
@@ -136,7 +136,7 @@ There are some significant differences between images and graphs.
 - Pixels follow an order while graph nodes do not.
 So, the locality is achieved in graphs based on neighborhoods.
 Also, we adopt the weight sharing from the normal convolutions.
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/graphmatrices.png?raw=true)
 
 __Invariance__
 
@@ -160,7 +160,7 @@ __H = f(X)__
 
 How we can use these latent vectors?
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphtasks.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/graphtasks.png?raw=true)
 
 But hold on...
 
@@ -182,26 +182,26 @@ where j is every neighbor of the node i.
 Let's see it in practice:
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacency.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/adjacency.png?raw=true)
 
 Considering this adjacency matrix, when we update the state of the node v<sub>1</sub>, we will take into account its neighbor states.
 That although would be wrong as we'll be entirely dropping the previous state of node v<sub>1</sub>. 
 So, we need to make a correction to the adjacency matrix A by adding the identity matrix and creating the matrix Ã.
 That would add 1s across the diagonal making each node a neighbor of itself, i.e we add self-loops.
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacencycorrected.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/adjacencycorrected.jpg?raw=true)
 
 Each latent vector of a node is a sum of the vectors of its neighbors. So, if the degree of a node( degree shows to how many neighbors a node has) is really high the scale of the latent vector would be entirely different and we'll face vanishing or exploding gradients.
 - So, we should normalize based on the degree of the node.
 Firstly we calculate degree matrix, D by summing up row-wise the adjacency matrix, Ã.
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/degree.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/degree.jpg?raw=true)
 
 Then, we inverse it and thus the equation takes the form.
 
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/inversedegree.jpg?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/inversedegree.jpg?raw=true)
 
 __H<sub>k+1</sub> = &#963;(ÃD<sup>-1</sup>W<sub>k</sub>H<sub>k</sub>)__
 
@@ -232,7 +232,7 @@ Petar Velickovic had another [idea](https://arxiv.org/abs/1710.10903). Instead, 
 a concept called attention. So, the node-wise equation now became:
 
 __h<sub>i</sub> = σ(Σ(a<sub>ij</sub>h<sub>j</sub>))__
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GAT.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/GAT.png?raw=true)
 
 The a<sub>ij</sub> comes from applying a softmax to e<sub>ij</sub> = a(h<sub>i</sub>,h<sub>j</sub>)
 which are non-normalized coefficients across pairs of nodes
@@ -241,7 +241,7 @@ Influenced by the results of [Vaswani et al.](https://arxiv.org/abs/1706.03762)
 they included multi head attention mechanisms which is essentially a K 
 number of replicates which are then concatenated or aggregated. The following figure from the paper makes it abundantly 
 clear.
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GAT-MULTI.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/GAT-MULTI.png?raw=true)
 
 
 # Message Passing Neural Nets
@@ -253,7 +253,7 @@ The two main points evolve around the two functions that happen in a GNN
 
 From this [youtube video](https://www.youtube.com/watch?v=zCEYiCxrL_0) we can sum them up by the figure.
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/MPNN.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/MPNN.png?raw=true)
 
 Essentially we concatenate the vector of the node-in-focus of the previous step with the edges K and its neighbors.
 The resulting vector passed through an update function f and then aggregated by the function U. 
@@ -261,7 +261,7 @@ Finally they are passed through a non-linear function to get new updated represe
 
 The previously described GCN and GAT, following a similar [formalism](https://towardsdatascience.com/a-unified-view-of-graph-neural-networks-12b40e8fdac5)
 can be described in the following figures.
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GCNGATMP.png?raw=true)
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/image/GCNGATMP.png?raw=true)
 
 
 
