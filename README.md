@@ -157,7 +157,7 @@ That would add 1s across the diagonal making each node a neighbor of itself, i.e
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/adjacencycorrected.jpg?raw=true)
 
 Each latent vector of a node is a sum of the vectors of its neighbors. So, if the degree of a node( degree shows to how many neighbors a node has) is really high the scale of the latent vector would be entirely different and we'll face vanishing or exploding gradients.
-- [So, we should normalize based on the degree of the node].
+- So, we should normalize based on the degree of the node.
 Firstly we calculate degree matrix, D by summing up row-wise the adjacency matrix, Ã.
 
 
@@ -207,25 +207,24 @@ clear.
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GAT-MULTI.png?raw=true)
 
 
-- Gated GNN
-
-In 2016, Li et al. introduced Gated Graph Neural Networks.
-They can be summed up by the following equation.
-
 # Message Passing Neural Nets
 
 The term message-passing arised in 2017 and  is really intuitive way to see graph neural nets.
 The two main points evolve around the two functions that happen in a GNN
 - The Update function, q
 - The Aggregate function, U
-From this [youtube video](https://www.youtube.com/watch?v=zCEYiCxrL_0) we can sum them up by the following equation.
+
+From this [youtube video](https://www.youtube.com/watch?v=zCEYiCxrL_0) we can sum them up by the figure.
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/MPNN.png?raw=true)
 
-and we can see the clearly the variants that arise from this.
+Essentially we concatenate the vector of the node-in-focus of the previous step with the edges K and its neighbors.
+The resulting vector passed through an update function f and then aggregated by the function U. 
+Finally they are passed through a non-linear function to get new updated representation.
 
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GCNMP.png?raw=true)
-![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GGNN.png?raw=true)
+The previously described GCN and GAT, following a similar formalism can be described in the following figures.
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GCNGATMP.png?raw=true)
+
 
 
 
