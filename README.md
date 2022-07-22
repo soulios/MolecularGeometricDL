@@ -101,6 +101,7 @@ __Inductive learning:__
 This type of learning is like the usual supervised learning. The model has not seen the nodes/graphs that will
 later classify. This applies to graph-classification tasks which are our main interst for molecular proprerty
 prediction.
+
 __Transductive learning:__
 In transductive learning, the model has seen the nodes without their labels and/or some features but gets an
 understanding of how they are connected within the graph. That is useful mainly for node-classification tasks.
