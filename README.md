@@ -95,6 +95,8 @@ If you still want to get a basic understanding of spectral methods you can advis
 
 Oops, I mentioned inductive without even explaining. The image speaks for itself.
 
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/inductive.png?raw=true)
+
 __Inductive learning:__
 This type of learning is like the usual supervised learning. The model has not seen the nodes/graphs that will
 later classify. This applies to graph-classification tasks which are our main interst for molecular proprerty
