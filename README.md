@@ -1,13 +1,16 @@
 # MolecularGeometricDL
 A repo of the most seminal applications of geometric deep learning in molecular tasks.
 
-The most comprehensive professionally curated resource on Geometric Deep learning applied in molecular tasks including the best tutorials, videos, books, papers, articles, courses, websites, conferences and open-source libraries.
-I am creating this resource, while conducting my PhD work at Helmholtz Centre of Environmental Research under the supervision of Dr. Jana Schor.
+The most comprehensive professionally curated resource on Geometric Deep learning applied in molecular tasks including
+the best tutorials, videos, books, papers, articles, courses, websites, conferences and open-source libraries.
+I am creating this resource, while conducting my PhD work at Helmholtz Centre of Environmental Research under the supervision 
+of Dr. Jana Schor.
 The papers will be listed by time order, noting the advancements along the way.
 
 # Table of Contents 
 - [Molecular representations](#Molecular-representations)
 - [What is a graph?](#What-is-a-graph?)
+- [Graph Neural Networks](#Graph-Neural-Networks)
 - [Graph Convolutions](#Graph-Convolutions)
 - [Tutorials](#Tutorials)
 - [Papers](#Papers)
@@ -19,14 +22,17 @@ The papers will be listed by time order, noting the advancements along the way.
 
 
 ## Molecular representations
-A molecule can be represented in a lot of ways. As input to a machine learning model, some represntations are more popular.
+A molecule can be represented in a lot of ways. As input to a machine learning model, some representations are more popular.
 Although, these representations have resulted in useful ML models for different molecular tasks, the plateau has not yet been reached.
 Due to the rise of graph neural networks in the last five years, several applications involve molecular tasks.
 
 # Molecular descriptors
 "The molecular descriptor is the final result of a logic and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment." [Handbook of molecular descriptors](https://onlinelibrary.wiley.com/doi/book/10.1002/9783527613106)
 
-There are several open-source and proprietary tools and packages that calculate a number of descriptors and of course there is a discrepancy between them. That does not allow for uniform representations of molecules and leads to non reproducible results.
+There are several open-source and proprietary tools and packages that calculate a number of descriptors and of course there is a discrepancy between them. That does not allow for uniform representations of molecules and leads to non-reproducible results.
+Below are the descriptors by the [DRAGON software](https://chm.kode-solutions.net/pf/dragon-7-0/).
+
+
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/descriptors.png?raw=true)
 
 
@@ -48,8 +54,12 @@ Molecular fingerprints represent the molecule as a sequence of bits. The most co
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/CIRCULARFP.jpg?raw=true)
 
 # Smiles
-The simplified molecular-input line-entry system (SMILES) is a specification in the form of a line notation for describing the structure of chemical species using short ASCII strings. SMILES strings can be imported by most molecule editors for conversion back into two-dimensional drawings or three-dimensional models of the molecules. 
-Unfortunately, a molecule can be represented by several SMILES strings and SMILES do not encode 3D information about the molecule
+The simplified molecular-input line-entry system (SMILES) is describing the structure of chemical using short ASCII strings.
+SMILES strings can be imported by most molecule editors for
+conversion back into two-dimensional drawings or three-dimensional models of the molecules. 
+Unfortunately, a molecule can be represented by several SMILES strings and although exists a canonical form of smiles, 
+it is not uniform in every database. Also, SMILES do not encode 3D information about the molecule.
+
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/SMILES.png?raw=true)
 
 
@@ -71,6 +81,29 @@ The graph can be represented essentially by three matrices:
 
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
 
+## Graph Neural Networks
+
+GNNs are a type of networks that operate on these graphs. 
+
+There are two ways to develop GNNs, spectrally and spatially.
+
+Both tried to generalize the mathematical concept of convolution to graphs.
+The spectral methods stuck to the strict mathematical notions resorted to the frequency domain(Laplacian eigenvectors).
+Being computationally expensive and not applicable to inductive scenarios, they finally died out.
+Spatial ones form the ones, now known as graph convolutions and are the ones that we are going to analyse more.
+If you still want to get a basic understanding of spectral methods you can advise the links below.
+
+Oops, I mentioned inductive without even explaining. The image speaks for itself.
+
+__Inductive learning:__
+This type of learning is like the usual supervised learning. The model has not seen the nodes/graphs that will
+later classify. This applies to graph-classification tasks which are our main interst for molecular proprerty
+prediction.
+__Transductive learning:__
+In transductive learning, the model has seen the nodes without their labels and/or some features but gets an
+understanding of how they are connected within the graph. That is useful mainly for node-classification tasks.
+
+![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/graphmatrices.png?raw=true)
 
 
 ## Graph Convolutions
@@ -181,7 +214,8 @@ we can aggregate them and reach a unique embedding for every graph.
 # GCN Variants
 - GCN
 
-The most known variation of graph convolutions was set by Kipf & Welling in 2017. 
+The most known variation of graph convolutions was set by [Kipf & Welling](https://arxiv.org/abs/1609.02907)
+in 2017. 
 They introduced a renormalization trick which is more than just a mere average of the neighbors.
 They normalize by  1&#247;&#8730;(d<sub>i</sub> * d<sub>j</sub>)
 
@@ -192,7 +226,7 @@ From now on, we'll refer to it as the __GCN__.
 
 - GAT(Graph Attention Networks)
 
-Petar Velickovic had another idea. Instead, of giving an equal weight to every neighbor that will be added explicitly, 
+Petar Velickovic had another [idea](https://arxiv.org/abs/1710.10903). Instead, of giving an equal weight to every neighbor that will be added explicitly, 
 a concept called attention. So, the node-wise equation now became:
 
 __h<sub>i</sub> = σ(Σ(a<sub>ij</sub>h<sub>j</sub>))__
@@ -201,7 +235,8 @@ __h<sub>i</sub> = σ(Σ(a<sub>ij</sub>h<sub>j</sub>))__
 The a<sub>ij</sub> comes from applying a softmax to e<sub>ij</sub> = a(h<sub>i</sub>,h<sub>j</sub>)
 which are non-normalized coefficients across pairs of nodes
 
-Influenced by the results of Vaswani et al. they included multi head attention mechanisms which is essentially a K 
+Influenced by the results of [Vaswani et al.](https://arxiv.org/abs/1706.03762)
+they included multi head attention mechanisms which is essentially a K 
 number of replicates which are then concatenated or aggregated. The following figure from the paper makes it abundantly 
 clear.
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GAT-MULTI.png?raw=true)
@@ -222,7 +257,8 @@ Essentially we concatenate the vector of the node-in-focus of the previous step 
 The resulting vector passed through an update function f and then aggregated by the function U. 
 Finally they are passed through a non-linear function to get new updated representation.
 
-The previously described GCN and GAT, following a similar formalism can be described in the following figures.
+The previously described GCN and GAT, following a similar [formalism](https://towardsdatascience.com/a-unified-view-of-graph-neural-networks-12b40e8fdac5)
+can be described in the following figures.
 ![alt text](https://github.com/soulios/MolecularGeometricDL/blob/main/GCNGATMP.png?raw=true)
 
 
@@ -231,7 +267,8 @@ The previously described GCN and GAT, following a similar formalism can be descr
 
 ## Tutorials
 
-
+- [Intro to Graph Neural Networks](https://www.youtube.com/watch?v=8owQBFAHw7E)
+- [UvA DL Notebooks](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial7/GNN_overview.html)
 ## Papers
 
 - [Convolutional Networks on Graphs for Learning Molecular Fingerprints](https://arxiv.org/abs/1509.09292) by Duvenaud et al. in 2015.
@@ -288,7 +325,9 @@ Graphs via Regularizing Variational Autoencoders](https://proceedings.neurips.cc
 
 
 ## Articles
-
+- [Understanding GNNs](https://distill.pub/2021/understanding-gnns/) :fire: :fire: :fire:
+- [Introduction to Graph Neural Networks](https://theaisummer.com/graph-convolutional-networks/)
+- [Graph Convolutional Networks](https://tkipf.github.io/graph-convolutional-networks/)
 ## Repositories
 - [Chemprop: A library with MPNN and D-MPNN applications on molecular datasets](https://github.com/chemprop/chemprop)🔥
 
