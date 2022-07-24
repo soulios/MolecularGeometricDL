@@ -234,34 +234,33 @@ This [article](https://distill.pub/2021/understanding-gnns/) includes an interac
 ## Papers
 | Paper | Author | Year | Github | Comments |
 | ---------- | ----- | --- | --- | -------------|
-| [Convolutional Networks on Graphs for Learning Molecular Fingerprints](https://arxiv.org/abs/1509.09292) | Duvenaud et al. | 2015 | None | Vanilla |
-| [Molecular Graph Convolutions: Moving Beyond Fingerprints](https://arxiv.org/abs/1603.00856?context=stat) | Kearnes et al. | 2016 | None | salmad |
-| [Semi-Supervised Classification with Graph Convolutional Networks](https://arxiv.org/abs/1609.02907) | Kipf and Welling | 2016 | None | not application on molecules but the most influential GCN |
-| [Convolutional Embedding of Attributed Molecular Graphs for Physical Property Prediction](https://pubs.acs.org/doi/10.1021/acs.jcim.6b00601) | Coley et al.| 2017 | [Github](https://github.com/connorcoley/conv_qsar_fast) | Atom features in graphs like ECFP. Not significant improvement over |    
-| [Neural Message Passing for Quantum Chemistry](https://proceedings.mlr.press/v70/gilmer17a.html)| Gilmer et al. | 2017 |None| 🔥🔥🔥|
-|[Graph Attention Networks](https://arxiv.org/abs/1710.10903)| Velickovic et al. | 2017| none| 🔥🔥🔥|
-|[Inductive Representation Learning on Large Graphs](https://cs.stanford.edu/people/jure/pubs/graphsage-nips17.pdf)| Hamilton et al.| 2017|none|com|
-|[Learning Graph-Level Representation for Drug Discovery](https://arxiv.org/abs/1709.03741) | Li et al. | 2017|none|com|
-|[Low Data Drug Discovery with One-Shot Learning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5408335/) | Tran | 2017|none|com|
-|[MolGAN: An implicit generative model for small molecular graphs](https://arxiv.org/abs/1805.11973) | De Cao and Kiprf | 2018|none|com|
-|[PotentialNet for Molecular Property Prediction](https://pubs.acs.org/doi/full/10.1021/acscentsci.8b00507) | Feinberg et al. | 2018|none|com|
-|[Adaptive Graph Convolutional Neural Networks](https://ojs.aaai.org/index.php/AAAI/article/view/11691) | Li et al. | 2018|none|com|
-|[Junction Tree Variational Autoencoder for Molecular Graph Generation](https://proceedings.mlr.press/v80/jin18a.html) | Jin et al. | 2018|none|com|
-|[Molecule Property Prediction Based on Spatial Graph Embedding](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00410) | Wang et al. | 2018|none|com|
-|[Graph Convolutional Policy Network for Goal-Directed Molecular Graph Generation](https://proceedings.neurips.cc/paper/2018/file/d60678e8f2ba9c540798ebbde31177e8-Paper.pdf) | You et al. | 2018|none|com|
-|[Hierarchical Graph Representation Learning with Differentiable Pooling](https://proceedings.neurips.cc/paper/2018/hash/e77dbaf6759253c7c6d0efc5690369c7-Abstract.html)| Ying | 2018|none|com|
-|[Graph classification using structural attention](https://dl.acm.org/doi/pdf/10.1145/3219819.3219980) | Lee et al. | 2018|none|com|
-|[Chemi-Net: A Molecular Graph Convolutional Network for Accurate Drug Property Prediction](https://www.mdpi.com/1422-0067/20/14/3389/htm) | Liu et al. | 2019|none|com|
-|[Analyzing Learned Molecular Representations for Property Prediction](https://pubs.acs.org/doi/full/10.1021/acs.jcim.9b00237) | Yang et al. | 2019|none|comfire|
-|[Strategies for Pre-training Graph Neural Networks](https://arxiv.org/abs/1905.12265) | Hu et al. | 2019|none|com🔥🔥🔥|
-|[CensNet: Convolution with Edge-Node Switching in Graph Neural Networks](https://www.ijcai.org/Proceedings/2019/0369.pdf) | Jiang | 2019
-|[Pushing the Boundaries of Molecular Representation for Drug Discovery with the Graph Attention Mechanism](https://pubmed.ncbi.nlm.nih.gov/31408336/) | Xiong et al. | 2020
-|[Geom-GCN: Geometric Graph Convolutional Networks](https://arxiv.org/abs/2002.05287) | Pei et al. | 2020|none|com|
-|[Multi-View Graph Neural Networks for Molecular Property Prediction](https://arxiv.org/abs/2005.13607) | Ma et al. | 2020|none|com|
-|[ASGN: An Active Semi-supervised Graph Neural Network for Molecular Property Prediction](https://dl.acm.org/doi/pdf/10.1145/3394486.3403117)| Hao et al. | 2020|none|com|
-|[MoFlow: An Invertible Flow Model for Generating Molecular Graphs](https://dl.acm.org/doi/abs/10.1145/3394486.3403104)| Zang et al. | 2020|none|com|
-|[GraphAF: a Flow-based Autoregressive Model for Molecular Graph Generation](https://arxiv.org/abs/2001.09382) | Shi et al. | 2021|none|com|
-|[Communicative Representation Learning on Attributed Molecular Graphs](https://www.ijcai.org/proceedings/2020/0392.pdf) | Song et al. | 2021|none|com🔥🔥🔥|
+| [Convolutional Networks on Graphs for Learning Molecular Fingerprints](https://arxiv.org/abs/1509.09292) | Duvenaud et al. | 2015 | [Github](https://github.com/HIPS/neural-fingerprint) | Aligne the notion of graph embedding to molecular fingerprints |
+| [Molecular Graph Convolutions: Moving Beyond Fingerprints](https://arxiv.org/abs/1603.00856?context=stat) | Kearnes et al. | 2016 | [DeepChem](https://github.com/deepchem) | Introduced edge features. Used weave convolutions and noticed that complex atom/bond featurizations do not enhance the model |
+| [Semi-Supervised Classification with Graph Convolutional Networks](https://arxiv.org/abs/1609.02907) | Kipf and Welling | 2016 | [Github](https://github.com/tkipf/gcn) | Not applied on molecules but the most influential GCN🔥🔥🔥| |
+| [Convolutional Embedding of Attributed Molecular Graphs for Physical Property Prediction](https://pubs.acs.org/doi/10.1021/acs.jcim.6b00601) | Coley et al.| 2017 | [Github](https://github.com/connorcoley/conv_qsar_fast) | Atom features in graphs like ECFP. Not significant improvement over Tox21 Challenge winner |    
+| [Neural Message Passing for Quantum Chemistry](https://proceedings.mlr.press/v70/gilmer17a.html)| Gilmer et al. | 2017 |[Github](https://github.com/priba/nmp_qc)| Intoduced the concept of Message passing networks. Alsotried to encode spatial info about the graph and resembled model ensembling by the concept of multiple towers🔥🔥🔥|
+|[Graph Attention Networks](https://arxiv.org/abs/1710.10903)| Velickovic et al. | 2017| [Github](https://github.com/PetarV-/GAT)| Introduced attention to GNNs. Not implemented in molecules though.🔥🔥🔥|
+|[Inductive Representation Learning on Large Graphs](https://cs.stanford.edu/people/jure/pubs/graphsage-nips17.pdf)| Hamilton et al.| 2017|[Github](https://github.com/williamleif/GraphSAGE)|The inductive variant of Kipf's GCN along with different aggregator functions|
+|[Learning Graph-Level Representation for Drug Discovery](https://arxiv.org/abs/1709.03741) | Li et al. | 2017|[Github](https://github.com/ZJULearning/graph_level_drug_discovery)|Introduced dummy super node connected to all the other nodes to learn gloabl features |
+|[Low Data Drug Discovery with One-Shot Learning](https://pubs.acs.org/doi/10.1021/acscentsci.6b00367) | Tran et al. | 2017|DeepChem|One-shot learning in graph classification tasks|
+|[MolGAN: An implicit generative model for small molecular graphs](https://arxiv.org/abs/1805.11973) | De Cao and Kipf | 2018|[Github](https://github.com/nicola-decao/MolGAN)|GANs and RL combined gave good results|
+|[PotentialNet for Molecular Property Prediction](https://pubs.acs.org/doi/full/10.1021/acscentsci.8b00507) | Feinberg et al. | 2018|[DGL-lifesci](https://github.com/awslabs/dgl-lifesci)|Used another type of split called agglomerative. Unfortunately the results are on the val set.|
+|[Adaptive Graph Convolutional Neural Networks](https://ojs.aaai.org/index.php/AAAI/article/view/11691) | Li et al. | 2018|[Github](https://github.com/codemarsyu/Adaptive-Graph-Convolutional-Network)|A successful spectral graph model|
+|[Junction Tree Variational Autoencoder for Molecular Graph Generation](https://proceedings.mlr.press/v80/jin18a.html) | Jin et al. | 2018|[Github](https://github.com/wengong-jin/icml18-jtnn)|Generating molecules by first creating scaffolds|
+|[Molecule Property Prediction Based on Spatial Graph Embedding](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00410) | Wang et al. | 2018|[Github](https://github.com/1128bian/C-SGEN)|1D-convolutions on each atom's features which are concatenated with the previos layers' ones|
+|[Graph Convolutional Policy Network for Goal-Directed Molecular Graph Generation](https://proceedings.neurips.cc/paper/2018/file/d60678e8f2ba9c540798ebbde31177e8-Paper.pdf) | You et al. | 2018|[Github](https://github.com/bowenliu16/rl_graph_generation)|Adversarial training|
+|[Hierarchical Graph Representation Learning with Differentiable Pooling](https://proceedings.neurips.cc/paper/2018/hash/e77dbaf6759253c7c6d0efc5690369c7-Abstract.html)| Ying | 2018|[Github](https://github.com/RexYing/diffpool)|Pooling hierarchical|
+|[Graph classification using structural attention](https://dl.acm.org/doi/pdf/10.1145/3219819.3219980) | Lee et al. | 2018|[Github](https://github.com/benedekrozemberczki/GAM)|Improved attention|
+|[Chemi-Net: A Molecular Graph Convolutional Network for Accurate Drug Property Prediction](https://www.mdpi.com/1422-0067/20/14/3389/htm) | Liu et al. | 2019|None|Predicting ADME properties with a multitask GCN|
+|[Analyzing Learned Molecular Representations for Property Prediction](https://pubs.acs.org/doi/full/10.1021/acs.jcim.9b00237) | Yang et al. | 2019|[Chemprop](https://github.com/chemprop/chemprop)|Not good comparison of the results. The directed version reduces noise.|
+|[Strategies for Pre-training Graph Neural Networks](https://arxiv.org/abs/1905.12265) | Hu et al. | 2019|[DGL-lifesci](https://github.com/awslabs/dgl-lifesci|Combination of node-wise and graph-wise pretraining does not cause negative transfer🔥🔥🔥|
+|[Pushing the Boundaries of Molecular Representation for Drug Discovery with the Graph Attention Mechanism](https://pubs.acs.org/doi/10.1021/acs.jmedchem.9b00959) | Xiong et al. | 2020|[DeepChem](https://github.com/deepchem)  |AttentiveFP was a significant improvement toprevious models. Attention can offer ways for interpretation. |
+|[Geom-GCN: Geometric Graph Convolutional Networks](https://arxiv.org/abs/2002.05287) | Pei et al. | 2020|[Github](https://github.com/graphdml-uiuc-jlu/geom-gcn)|Transductive|
+|[Multi-View Graph Neural Networks for Molecular Property Prediction](https://arxiv.org/abs/2005.13607) | Ma et al. | 2020|None|Graph seen in two ways, edge-central and node-central|
+|[ASGN: An Active Semi-supervised Graph Neural Network for Molecular Property Prediction](https://dl.acm.org/doi/pdf/10.1145/3394486.3403117)| Hao et al. | 2020|[Github](https://github.com/HaoZhongkai/AS_Molecule)|Active Learning|
+|[MoFlow: An Invertible Flow Model for Generating Molecular Graphs](https://dl.acm.org/doi/abs/10.1145/3394486.3403104)| Zang et al. | 2020|[Github](https://github.com/calvin-zcx/moflow)|?|
+|[GraphAF: a Flow-based Autoregressive Model for Molecular Graph Generation](https://arxiv.org/abs/2001.09382) | Shi et al. | 2021|[Github](https://github.com/DeepGraphLearning/GraphAF)|?|
+|[Communicative Representation Learning on Attributed Molecular Graphs](https://www.ijcai.org/proceedings/2020/0392.pdf) | Song et al. | 2021|[Github](https://github.com/SY575/CMPNN)|D-MPNN but with a communicative function to boost the edge messages🔥🔥🔥|
 | __Variational Graph Autoencoders__| | | | |
 |[Variational Graph Auto-Encoders](https://arxiv.org/abs/1611.07308) | Kipf amd Welling | 2016|noen|com|
 |[Constrained Graph Variational Autoencoders for Molecule Design](https://arxiv.org/abs/1805.09076) | Liu et al. | 2018 🔥🔥🔥|none|com|
