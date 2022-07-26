@@ -1,8 +1,9 @@
-# MolecularGeometricDL
-A repo of the most seminal applications of geometric deep learning in molecular tasks.
+# ToxicGeometricDL
+A repo of the most seminal applications of geometric deep learning in toxicity prediction tasks.
 
-The most comprehensive professionally curated resource on Geometric Deep learning applied in molecular tasks including
+The most comprehensive professionally curated resource on Geometric Deep learning applied in toox pred tasks including
 the best tutorials, videos, books, papers, articles, courses, websites, conferences and open-source libraries.
+Since, predictive toxicology is a niche field, many papers are from neighboring fields such as drug discovery or plain DL which are just applied in toxicology datasets.
 
 I am creating this resource, while conducting my PhD work at Helmholtz Centre of Environmental Research under the supervision 
 of Dr. Jana Schor.
@@ -21,6 +22,20 @@ Disclaimer: All the images are sourced from the resources I linked.
 - [Videos](#Videos)
 - [Tools](#Tools)
 
+## What is toxicology?
+
+Toxicology is the study of the adverse effects of chemicals or physical agents on living organisms
+It can be clustered by the degree of their damage to cell(cytotoxicity),organ(hepatotoxicity) or systemic toxicants(mutagenicity,genotoxicity).
+Any given chemical has to undergo a rigorous, expensive and time-consuming toxicity-assessment.
+The field of computational toxicology tries to alleviate this burden by building QSAR (quantitative structure-activity relationship) models that 
+associate a structure to a specific toxic effect.
+For many years , that was a task of experienced chemists that know which fragments of a molecule are poentially toxic and build models bassed on these structural alerts. Basically, if a substructure was identified as part of a molecule, that molecule had a higher probability of being toxic.
+The last two decades there has been a lot of development as we developed ways to represent a molecule in a machine-readable way.
+Among the most popular are the SMILES strings, the molecular descriptors and the molecular fingeprints.
+For the computer though, toxicity is just a dataset where a chemical has a label of 1 or 0 encoding being toxic or not.
+The last fifteen years they have been developed several datasets with these mappings based on lab experiments.
+MoleculeNet is a library that gathered all these as a benchmark for the ML models.
+Based on these representations and coupled with ML and DL models, we achieved great results. In the last few years, graph neural networks seem to dominate the research interest of the field. As graphs are a new input for our models, it was intuitive that molecules can be described as graphs.
 
 
 ## What is a graph?
