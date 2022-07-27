@@ -24,10 +24,6 @@ Disclaimer: All the images are sourced from the resources I linked.
 
 
 
-## Tutorials
-
-- [Intro to Graph Neural Networks](https://www.youtube.com/watch?v=8owQBFAHw7E)
-- [UvA DL Notebooks](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial7/GNN_overview.html)
 ## Papers
 | Paper | Author | Year | Github | Comments | Datasets|
 | ---------- | ----- | --- | --- | -------------| -----|
@@ -50,15 +46,14 @@ Disclaimer: All the images are sourced from the resources I linked.
 |[Hierarchical Graph Representation Learning with Differentiable Pooling](https://arxiv.org/abs/1806.08804)| Ying | 2018|[Github](https://github.com/RexYing/diffpool)|Pooling hierarchical better than global mean and sum and sortpooling| ENZYMES,PROTEINS,REDDIT.COLAB|
 |[Graph classification using structural attention](https://dl.acm.org/doi/pdf/10.1145/3219819.3219980) | Lee et al. | 2018|[Github](https://github.com/benedekrozemberczki/GAM)|Improved attention|HIV,NCI|
 |[Chemi-Net: A Molecular Graph Convolutional Network for Accurate Drug Property Prediction](https://www.mdpi.com/1422-0067/20/14/3389/htm) | Liu et al. | 2019|None|Predicting ADME properties with a multitask GCN.Surpassed a known tool by far,Cubist|ADME|
-|[Analyzing Learned Molecular Representations for Property Prediction](https://pubs.acs.org/doi/full/10.1021/acs.jcim.9b00237) | Yang et al. | 2019|[Chemprop](https://github.com/chemprop/chemprop)|Not good comparison of the results. The directed version reduces noise.|ALL MOLECULAR DATASETS🔥🔥🔥|
+|[Analyzing Learned Molecular Representations for Property Prediction](https://pubs.acs.org/doi/full/10.1021/acs.jcim.9b00237) | Yang et al. | 2019|[Chemprop](https://github.com/chemprop/chemprop)|Not good comparison of the results. The directed version reduces noise.|Most molecular datasets🔥🔥🔥|
 |[Strategies for Pre-training Graph Neural Networks](https://arxiv.org/abs/1905.12265) | Hu et al. | 2019| [DGL-lifesci](https://github.com/awslabs/dgl-lifesci)|Combination of node-wise(context pred and attr masking) and graph-wise supervised pretraining does not cause negative transfer🔥🔥🔥|ChEMBL,ZINC,Tox21,ToxCast etc|
-|[Pushing the Boundaries of Molecular Representation for Drug Discovery with the Graph Attention Mechanism](https://pubs.acs.org/doi/10.1021/acs.jmedchem.9b00959) | Xiong et al. | 2020| [DeepChem](https://github.com/deepchem)  |AttentiveFP was a significant improvement to previous models.They added chirality to atom features and stereo to bond features.Also,they used GRU as a readout.|
+|[Pushing the Boundaries of Molecular Representation for Drug Discovery with the Graph Attention Mechanism](https://pubs.acs.org/doi/10.1021/acs.jmedchem.9b00959) | Xiong et al. | 2020| [DeepChem](https://github.com/deepchem)  |AttentiveFP was a significant improvement to previous models.They added chirality to atom features and stereo to bond features.Also,they used GRU as a readout.|Most molecular datasets|
 |[Geometry-enhanced molecular representation learning for property prediction](https://www.nature.com/articles/s42256-021-00438-4)|Fang et al.|2022|[Github](https://github.com/PaddlePaddle/PaddleHelix/tree/dev/apps/pretrained_compound/ChemRL/GEM)|Pre-train on geometry info improves the downstream task performance🔥🔥🔥|Most molecular datasets|
 |[Multi-View Graph Neural Networks for Molecular Property Prediction](https://arxiv.org/abs/2005.13607) | Ma et al. | 2020|None|Graph seen in two ways, edge-central and node-central and a cross-dependent passing enhances more the model(Tox21 scaf 0.836🔥🔥🔥|Most molecular datasets|
 |[ASGN: An Active Semi-supervised Graph Neural Network for Molecular Property Prediction](https://dl.acm.org/doi/pdf/10.1145/3394486.3403117)| Hao et al. | 2020|[Github](https://github.com/HaoZhongkai/AS_Molecule)|Active Learning surpassed Infograph and Mean Teaches ans SSL|QM9,OPV|
 |[Communicative Representation Learning on Attributed Molecular Graphs](https://www.ijcai.org/proceedings/2020/0392.pdf) | Song et al. | 2021|[Github](https://github.com/SY575/CMPNN)|D-MPNN but with a communicative function to boost the edge messages🔥🔥🔥|Same as Gilmer DMPNN|
-|[Chemical toxicity prediction based on semi-supervised learning and graph convolutional neural network
-](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8)| Chen et al. | 2021 | [Github](https://github.com/chen709847237/SSL-GCN)| Mean-Teacher mediocre results|Tox21|ZINC|
+|[Chemical toxicity prediction based on semi-supervised learning and graph convolutional neural network](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8)| Chen et al. | 2021 | [Github](https://github.com/chen709847237/SSL-GCN)| Mean-Teacher mediocre results|Tox21|ZINC|
 | __Graph Generation/ De novo molecule design__ | | | | | |
 |[Junction Tree Variational Autoencoder for Molecular Graph Generation](https://proceedings.mlr.press/v80/jin18a.html) | Jin et al. | 2018|[Github](https://github.com/wengong-jin/icml18-jtnn)|Generating molecules by first creating scaffolds|
 |[MolGAN: An implicit generative model for small molecular graphs](https://arxiv.org/abs/1805.11973) | De Cao and Kipf | 2018|[Github](https://github.com/nicola-decao/MolGAN)|GANs and RL combined gave good results|
@@ -86,7 +81,11 @@ Disclaimer: All the images are sourced from the resources I linked.
 |[Could graph neural networks learn better molecular representation for drug discovery? A comparison study of descriptor-based and graph-based models](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00479-8) | Jiang et al. | 2021 |none|🔥🔥|
 
 
+## Tutorials
 
+- [Intro to Graph Neural Networks](https://www.youtube.com/watch?v=8owQBFAHw7E)
+- [UvA DL Notebooks](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial7/GNN_overview.html)
+- 
 ## Articles
 - [Understanding GNNs](https://distill.pub/2021/understanding-gnns/) :fire: :fire: :fire:
 - [Introduction to Graph Neural Networks](https://theaisummer.com/graph-convolutional-networks/)
@@ -102,10 +101,12 @@ Disclaimer: All the images are sourced from the resources I linked.
 
 
 ## Tools
+- [DGL-lifesci](https://lifesci.dgl.ai/):  DGL-LifeSci is a python package for applying graph neural networks to various tasks in chemistry and biology.🔥🔥🔥
+- [Pytorch-Geometric](https://pytorch-geometric.readthedocs.io/en/latest/) PYG is a library to easily train Graph Neural Networks (GNNs) for a wide range of applications related to structured data.
+- [Dive Into Graphs](https://diveintographs.readthedocs.io/en/latest/) DIG provides a unified testbed for higher level, research-oriented graph deep learning tasks, such as graph generation, self-supervised learning, explainability, and 3D graphs.
 - [RDKit](https://www.rdkit.org/): A cheminformatics library for generating/calculating molecular descriptors and fingerprints and handling molecules
 - [MoleculeNet](https://moleculenet.org/): A library for benchmarking ML models across different molecular tasks
 - [DeepChem](https://github.com/deepchem/deepchem): A toolkit which includes a lot of different models and datasets with relevant tutotials for gentle introduction into molecular ML. 
-- [DGL-lifesci](https://github.com/awslabs/dgl-lifesci):  A package for various applications in life science with graph neural networks.🔥🔥🔥
 
 
 
@@ -115,18 +116,19 @@ Disclaimer: All the images are sourced from the resources I linked.
 
 ## What is toxicology?
 
-Toxicology is the study of the adverse effects of chemicals or physical agents on living organisms
-It can be clustered by the degree of their damage to cell(cytotoxicity),organ(hepatotoxicity) or systemic toxicants(mutagenicity,genotoxicity).
+Toxicology is the study of the adverse effects of chemicals or physical agents on living organisms.
+
+It can be clustered by the degree of their damage to cell (cytotoxicity), organ (hepatotoxicity) or systemic toxicants (mutagenicity,genotoxicity).
 Any given chemical has to undergo a rigorous, expensive and time-consuming toxicity-assessment.
 The field of computational toxicology tries to alleviate this burden by building QSAR (quantitative structure-activity relationship) models that 
 associate a structure to a specific toxic effect.
-For many years , that was a task of experienced chemists that know which fragments of a molecule are poentially toxic and build models bassed on these structural alerts. Basically, if a substructure was identified as part of a molecule, that molecule had a higher probability of being toxic.
+For many years , that was a task of experienced chemists that know which fragments of a molecule are potentially toxic and build models based on these so called structural alerts. Basically, if a substructure was identified as part of a molecule, that molecule had a higher probability of being toxic.
 The last two decades there has been a lot of development as we developed ways to represent a molecule in a machine-readable way.
 Among the most popular are the SMILES strings, the molecular descriptors and the molecular fingeprints.
 For the computer though, toxicity is just a dataset where a chemical has a label of 1 or 0 encoding being toxic or not.
 The last fifteen years they have been developed several datasets with these mappings based on lab experiments.
 MoleculeNet is a library that gathered all these as a benchmark for the ML models.
-Based on these representations and coupled with ML and DL models, we achieved great results. In the last few years, graph neural networks seem to dominate the research interest of the field. As graphs are a new input for our models, it was intuitive that molecules can be described as graphs.
+Based on these representations and coupled with ML and DL models, we achieved great results. In the last few years, graph neural networks seem to dominate the research interest of the field. As graphs are a new input for our models, it was intuitive that molecules can be described as graphs and that lit the spark for the development of this field and the reason for this repo.
 
 
 ## What is a graph?
