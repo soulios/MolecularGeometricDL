@@ -53,17 +53,17 @@ Disclaimer: All the images are sourced from the resources I linked.
 |[Multi-View Graph Neural Networks for Molecular Property Prediction](https://arxiv.org/abs/2005.13607) | Ma et al. | 2020|None|Graph seen in two ways, edge-central and node-central and a cross-dependent passing enhances more the model(Tox21 scaf 0.836🔥🔥🔥|Most molecular datasets|
 |[ASGN: An Active Semi-supervised Graph Neural Network for Molecular Property Prediction](https://dl.acm.org/doi/pdf/10.1145/3394486.3403117)| Hao et al. | 2020|[Github](https://github.com/HaoZhongkai/AS_Molecule)|Active Learning surpassed Infograph and Mean Teaches ans SSL|QM9,OPV|
 |[Communicative Representation Learning on Attributed Molecular Graphs](https://www.ijcai.org/proceedings/2020/0392.pdf) | Song et al. | 2021|[Github](https://github.com/SY575/CMPNN)|D-MPNN but with a communicative function to boost the edge messages🔥🔥🔥|Same as Gilmer DMPNN|
-|[Chemical toxicity prediction based on semi-supervised learning and graph convolutional neural network](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8)| Chen et al. | 2021 | [Github](https://github.com/chen709847237/SSL-GCN)| Mean-Teacher mediocre results|Tox21|ZINC|
+|[Chemical toxicity prediction based on semi-supervised learning and grQM9,ZINCaph convolutional neural network](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8)| Chen et al. | 2021 | [Github](https://github.com/chen709847237/SSL-GCN)| Mean-Teacher mediocre results|Tox21|ZINC|
 | __Graph Generation/ De novo molecule design__ | | | | | |
-|[Junction Tree Variational Autoencoder for Molecular Graph Generation](https://proceedings.mlr.press/v80/jin18a.html) | Jin et al. | 2018|[Github](https://github.com/wengong-jin/icml18-jtnn)|Generating molecules by first creating scaffolds|
-|[MolGAN: An implicit generative model for small molecular graphs](https://arxiv.org/abs/1805.11973) | De Cao and Kipf | 2018|[Github](https://github.com/nicola-decao/MolGAN)|GANs and RL combined gave good results|
-|[Graph Convolutional Policy Network for Goal-Directed Molecular Graph Generation](https://proceedings.neurips.cc/paper/2018/file/d60678e8f2ba9c540798ebbde31177e8-Paper.pdf) | You et al. | 2018|[Github](https://github.com/bowenliu16/rl_graph_generation)|Adversarial training|
-|[MoFlow: An Invertible Flow Model for Generating Molecular Graphs](https://dl.acm.org/doi/abs/10.1145/3394486.3403104)| Zang et al. | 2020|[Github](https://github.com/calvin-zcx/moflow)|?|
-|[GraphAF: a Flow-based Autoregressive Model for Molecular Graph Generation](https://arxiv.org/abs/2001.09382) | Shi et al. | 2021|[Github](https://github.com/DeepGraphLearning/GraphAF)|?|
+|[Junction Tree Variational Autoencoder for Molecular Graph Generation](https://proceedings.mlr.press/v80/jin18a.html) | Jin et al. | 2018|[Github](https://github.com/wengong-jin/icml18-jtnn)|JTVAE generating molecules by first creating scaffolds|ZINC|
+|[MolGAN: An implicit generative model for small molecular graphs](https://arxiv.org/abs/1805.11973) | De Cao and Kipf | 2018|[Github](https://github.com/nicola-decao/MolGAN)|GANs and RL combined gave valid, novel but not unique molecules|QM9|
+|[Graph Convolutional Policy Network for Goal-Directed Molecular Graph Generation](https://proceedings.neurips.cc/paper/2018/file/d60678e8f2ba9c540798ebbde31177e8-Paper.pdf) | You et al. | 2018|[Github](https://github.com/bowenliu16/rl_graph_generation)|GCPN uses adversarial training and RL,better than JT-VAE but not compared to molgan|ZINC|
+|[MoFlow: An Invertible Flow Model for Generating Molecular Graphs](https://dl.acm.org/doi/abs/10.1145/3394486.3403104)| Zang et al. | 2020|[Github](https://github.com/calvin-zcx/moflow)|Best compared to any other graph generation|QM9,ZINC|
+|[GraphAF: a Flow-based Autoregressive Model for Molecular Graph Generation](https://arxiv.org/abs/2001.09382) | Shi et al. | 2019|[Github](https://github.com/DeepGraphLearning/GraphAF)One of the first flow based approaches|ZINC|
 | __Variational Graph Autoencoders__| | | | |
-|[Variational Graph Auto-Encoders](https://arxiv.org/abs/1611.07308) | Kipf amd Welling | 2016|noen|com|
-|[Constrained Graph Variational Autoencoders for Molecule Design](https://arxiv.org/abs/1805.09076) | Liu et al. | 2018 🔥🔥🔥|none|com|
-|[Constrained Generation of Semantically Valid Graphs via Regularizing Variational Autoencoders](https://proceedings.neurips.cc/paper/2018/file/1458e7509aa5f47ecfb92536e7dd1dc7-Paper.pdf) | Ma et al. | 2018|none|com|
+|[Variational Graph Auto-Encoders](https://arxiv.org/abs/1611.07308) | Kipf amd Welling | 2016|[Github](https://github.com/tkipf/gae)|The first GVAE on link prediction tasks|Citation|
+|[Constrained Graph Variational Autoencoders for Molecule Design](https://arxiv.org/abs/1805.09076) | Liu et al. | 2018|[Github](https://github.com/microsoft/constrained-graph-variational-autoencoder)||🔥🔥🔥||CEPDB,QM9,ZINC|
+|[Constrained Generation of Semantically Valid Graphs via Regularizing Variational Autoencoders](https://proceedings.neurips.cc/paper/2018/file/1458e7509aa5f47ecfb92536e7dd1dc7-Paper.pdf) | Ma et al. | 2018|Mediocre results in graph generation|QM9,ZINC|
 |__Graph Unet__| | | | |
 |[Graph U-Nets](https://arxiv.org/pdf/1905.05178.pdf)| Gao and Li |2018|none|com|
 |__Graph Contrastive learning__| | | | |
@@ -71,6 +71,7 @@ Disclaimer: All the images are sourced from the resources I linked.
 |[FragNet, a Contrastive Learning-Based Transformer Model for Clustering, Interpreting, Visualizing, and Navigating Chemical Space](https://www.mdpi.com/1420-3049/26/7/2065) | Shrivastava | 2021|none|com|
 |[Molecular contrastive learning of representations via graph neural networks](https://www.nature.com/articles/s42256-022-00447-x) | Wang et al. | 2022| none|🔥🔥🔥|
 |__Graph Transformers__| | | | |
+|[Self-Supervised Graph Transformer on Large-ScaleMolecular Data](https://papers.nips.cc/paper/2020/hash/94aef38441efa3380a3bed3faf1f9d5d-Abstract.html)|Rong et al.|2020|[Github](https://github.com/tencent-ailab/grover)|none|ChEMBL,ZINC|
 |[Graph Transformer Networks](https://arxiv.org/abs/1911.06455) | Jun et al. | 2020|none|com|
 |__Reviews__ | | | | |
 |[Graph convolutional networks: a comprehensive review](https://computationalsocialnetworks.springeropen.com/articles/10.1186/s40649-019-0069-y?ref=https://githubhelp.com) | Zhang et al. | 2019|none|com|
@@ -85,7 +86,7 @@ Disclaimer: All the images are sourced from the resources I linked.
 
 - [Intro to Graph Neural Networks](https://www.youtube.com/watch?v=8owQBFAHw7E)
 - [UvA DL Notebooks](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial7/GNN_overview.html)
-- 
+
 ## Articles
 - [Understanding GNNs](https://distill.pub/2021/understanding-gnns/) :fire: :fire: :fire:
 - [Introduction to Graph Neural Networks](https://theaisummer.com/graph-convolutional-networks/)
