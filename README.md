@@ -67,7 +67,7 @@ Disclaimer: All the images are sourced from the resources I linked.
 |__Graph Unet__| | | | |
 |[Graph U-Nets](https://arxiv.org/pdf/1905.05178.pdf)| Gao and Li |2018|none|com|
 |__Graph Contrastive learning__| | | | |
-|[MoCL: Data-driven Molecular Fingerprint via Knowledge-aware Contrastive Learning from Molecular Graph](https://arxiv.org/abs/2106.04509) | Sun et al. | 2021|Local ang global-level contrastive learning by node-masking, edge pertubation and maximizing the similarity of ECFPs ang graph embeddings. Mediocre results|Bace,BBBP,Tox21,ToxCast|
+|[MoCL: Data-driven Molecular Fingerprint via Knowledge-aware Contrastive Learning from Molecular Graph](https://arxiv.org/abs/2106.04509) | Sun et al. | 2021|Local ang global-level contrastive learning by node-masking, edge pertubation and maximizing the similarity of ECFPs ang graph embeddings. NEGATIVE TRANSFER BY ALL PRETRAINING STRATEGIES|Bace,BBBP,Tox21,ToxCast|
 |[Molecular contrastive learning of representations via graph neural networks](https://www.nature.com/articles/s42256-022-00447-x) | Wang et al. | 2022| Best contrastive so far, augmenting by subgraph removal.🔥🔥🔥|Most molecular datasets(Tox21=0.8)|
 |__Graph Transformers__| | | | |
 |[Self-Supervised Graph Transformer on Large-ScaleMolecular Data](https://papers.nips.cc/paper/2020/hash/94aef38441efa3380a3bed3faf1f9d5d-Abstract.html)|Rong et al.|2020|[Github](https://github.com/tencent-ailab/grover)|Dynamic MPNN:Number of hops is random|ChEMBL,ZINC|
