@@ -67,15 +67,14 @@ Disclaimer: All the images are sourced from the resources I linked.
 |__Graph Unet__| | | | |
 |[Graph U-Nets](https://arxiv.org/pdf/1905.05178.pdf)| Gao and Li |2018|none|com|
 |__Graph Contrastive learning__| | | | |
-|[MoCL: Data-driven Molecular Fingerprint via Knowledge-aware Contrastive Learning from Molecular Graph](https://arxiv.org/abs/2106.04509) | Sun et al. | 2021|Local ang global-level contrastive learning by node-masking, edge pertubation and maximizing the similarity of ECFPs ang graph embeddings. NEGATIVE TRANSFER BY ALL PRETRAINING STRATEGIES|Bace,BBBP,Tox21,ToxCast|
+|[MoCL: Data-driven Molecular Fingerprint via Knowledge-aware Contrastive Learning from Molecular Graph](https://arxiv.org/abs/2106.04509) | Sun et al. | 2021|Local level contrastive learning by bioisostere substitution, and global-level maximizing the similarity of ECFPs ang graph embeddings. NEGATIVE TRANSFER on TOX datasets|Bace,BBBP,Tox21,ToxCast|
 |[Molecular contrastive learning of representations via graph neural networks](https://www.nature.com/articles/s42256-022-00447-x) | Wang et al. | 2022| Best contrastive so far, augmenting by subgraph removal.🔥🔥🔥|Most molecular datasets(Tox21=0.8)|
 |__Graph Transformers__| | | | |
 |[Self-Supervised Graph Transformer on Large-ScaleMolecular Data](https://papers.nips.cc/paper/2020/hash/94aef38441efa3380a3bed3faf1f9d5d-Abstract.html)|Rong et al.|2020|[Github](https://github.com/tencent-ailab/grover)|Dynamic MPNN:Number of hops is random|ChEMBL,ZINC|
 |[Graph Transformer Networks](https://arxiv.org/abs/1911.06455) | Jun et al. | 2020|An improvement compared to GAT to learn better node-level representations|IMDB and Citations|
 |__Graph Explainability__| | | | |
-|[GNNExplainer: Generating Explanations for Graph Neural Networks
-](https://arxiv.org/abs/1903.03894) | Ying et al. | 2019|A model-agnostic, single-instance,post-hoc explanation by extracting subgraphs|MUTAG,REDDIT|
-|[Reinforced Causal Explainer for Graph Neural Networks](https://arxiv.org/abs/2204.11028?context=cs.AI) | Wang et al. | 2022 |A model-agnostic, single-instance,post-hoc explanation by extracting subgraphs|MUTAG,REDDIT|
+|[GNNExplainer: Generating Explanations for Graph Neural Networks](https://arxiv.org/abs/1903.03894) | Ying et al. | 2019|A model-agnostic, single-instance,post-hoc explanation by extracting subgraphs|MUTAG,REDDIT|
+|[Reinforced Causal Explainer for Graph Neural Networks](https://arxiv.org/abs/2204.11028?context=cs.AI) | Wang et al. | 2022 |It frames the explanation task as a sequential decision process.|MUTAG,REDDIT,Genome|
 |__Reviews__ | | | | |
 |[Graph convolutional networks: a comprehensive review](https://computationalsocialnetworks.springeropen.com/articles/10.1186/s40649-019-0069-y?ref=https://githubhelp.com) | Zhang et al. | 2019|none|com|
 |[How Powerful are Graph Neural Networks?](https://arxiv.org/abs/1810.00826) | Xu et al. | 2019|none|com|
