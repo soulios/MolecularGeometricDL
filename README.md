@@ -5,8 +5,6 @@ The most comprehensive professionally curated resource on Geometric Deep learnin
 the best tutorials, videos, books, papers, articles, courses, websites, conferences and open-source libraries.
 Since, predictive toxicology is a niche field, many papers are from neighboring fields such as drug discovery or plain DL which are just applied in toxicology datasets.
 
-I am creating this resource, while conducting my PhD work at Helmholtz Centre of Environmental Research under the supervision 
-of Dr. Jana Schor.
 The papers will be listed by time order, noting the advancements along the way.
 
 Disclaimer: All the images are sourced from the resources I linked.
